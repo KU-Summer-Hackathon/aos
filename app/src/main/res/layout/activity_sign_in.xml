@@ -10,16 +10,18 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/dore_black"
         tools:context=".presentation.auth.SignInActivity">
 
         <ImageButton
             android:id="@+id/btn_sign_in_kakao_login"
             android:layout_width="0dp"
-            android:layout_height="70dp"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginBottom="28dp"
-            android:background="@android:color/transparent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@color/dore_yellow"
             android:contentDescription="@string/sign_in_desc_kakao_login"
+            android:padding="12dp"
             android:src="@drawable/ic_kakao_login"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
