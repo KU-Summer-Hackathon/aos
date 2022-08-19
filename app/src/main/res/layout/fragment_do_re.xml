@@ -45,18 +45,19 @@
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.5" />
 
-        <ImageView
-            android:id="@+id/iv_do_re_help"
+        <ImageButton
+            android:id="@+id/btn_do_re_help"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginEnd="8dp"
             android:background="@drawable/shape_rect_white_10"
-            app:layout_constraintBottom_toTopOf="@id/iv_do_re_eat"
+            app:layout_constraintBottom_toTopOf="@id/btn_do_re_eat"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toStartOf="@id/guideline_do_re"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@id/iv_do_re_eat"
+            app:layout_constraintStart_toStartOf="@id/btn_do_re_eat"
             app:layout_constraintTop_toBottomOf="@id/tv_do_re_title"
+            app:layout_constraintVertical_bias="0.3"
             app:layout_constraintVertical_chainStyle="packed" />
 
         <TextView
@@ -66,11 +67,11 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/montserrat_bold"
-            android:text="@string/do_re_help"
+            android:text="@string/title_help"
             android:textColor="@color/black"
             android:textSize="20dp"
-            app:layout_constraintStart_toStartOf="@id/iv_do_re_help"
-            app:layout_constraintTop_toTopOf="@id/iv_do_re_help" />
+            app:layout_constraintStart_toStartOf="@id/btn_do_re_help"
+            app:layout_constraintTop_toTopOf="@id/btn_do_re_help" />
 
         <TextView
             android:id="@+id/tv_do_re_help_desc"
@@ -78,26 +79,26 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="16dp"
-            android:fontFamily="@font/spoqa_han_sans_neo_medium_f"
+            android:fontFamily="@font/spoqa_han_sans_neo_medium"
             android:text="@string/do_re_help_desc"
             android:textColor="@color/dore_white"
             android:textSize="13dp"
-            app:layout_constraintBottom_toBottomOf="@id/iv_do_re_help"
+            app:layout_constraintBottom_toBottomOf="@id/btn_do_re_help"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/guideline_do_re" />
 
-        <ImageView
-            android:id="@+id/iv_do_re_eat"
+        <ImageButton
+            android:id="@+id/btn_do_re_eat"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/shape_rect_white_10"
-            app:layout_constraintBottom_toTopOf="@id/iv_do_re_lend"
+            app:layout_constraintBottom_toTopOf="@id/btn_do_re_lend"
             app:layout_constraintDimensionRatio="2.08"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/iv_do_re_help" />
+            app:layout_constraintTop_toBottomOf="@id/btn_do_re_help" />
 
         <TextView
             android:id="@+id/tv_do_re_eat"
@@ -105,28 +106,28 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/montserrat_bold"
-            android:text="@string/do_re_eat"
+            android:text="@string/title_eat"
             android:textColor="@color/black"
             android:textSize="20dp"
-            app:layout_constraintEnd_toEndOf="@id/iv_do_re_eat"
-            app:layout_constraintStart_toStartOf="@id/iv_do_re_eat"
-            app:layout_constraintTop_toTopOf="@id/iv_do_re_eat" />
+            app:layout_constraintEnd_toEndOf="@id/btn_do_re_eat"
+            app:layout_constraintStart_toStartOf="@id/btn_do_re_eat"
+            app:layout_constraintTop_toTopOf="@id/btn_do_re_eat" />
 
         <TextView
             android:id="@+id/tv_do_re_eat_desc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:fontFamily="@font/spoqa_han_sans_neo_medium_f"
+            android:fontFamily="@font/spoqa_han_sans_neo_medium"
             android:text="@string/do_re_eat_desc"
             android:textColor="@color/black"
             android:textSize="13dp"
-            app:layout_constraintEnd_toEndOf="@id/iv_do_re_eat"
-            app:layout_constraintStart_toStartOf="@id/iv_do_re_eat"
+            app:layout_constraintEnd_toEndOf="@id/btn_do_re_eat"
+            app:layout_constraintStart_toStartOf="@id/btn_do_re_eat"
             app:layout_constraintTop_toBottomOf="@id/tv_do_re_eat" />
 
-        <ImageView
-            android:id="@+id/iv_do_re_lend"
+        <ImageButton
+            android:id="@+id/btn_do_re_lend"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="16dp"
@@ -134,9 +135,9 @@
             android:background="@drawable/shape_rect_white_10"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintDimensionRatio="1:1"
-            app:layout_constraintEnd_toEndOf="@id/iv_do_re_eat"
+            app:layout_constraintEnd_toEndOf="@id/btn_do_re_eat"
             app:layout_constraintStart_toEndOf="@id/guideline_do_re"
-            app:layout_constraintTop_toBottomOf="@id/iv_do_re_eat" />
+            app:layout_constraintTop_toBottomOf="@id/btn_do_re_eat" />
 
         <TextView
             android:id="@+id/tv_do_re_lend"
@@ -145,11 +146,11 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:fontFamily="@font/montserrat_bold"
-            android:text="@string/do_re_lend"
+            android:text="@string/title_lend"
             android:textColor="@color/black"
             android:textSize="20dp"
-            app:layout_constraintEnd_toEndOf="@id/iv_do_re_lend"
-            app:layout_constraintTop_toTopOf="@id/iv_do_re_lend" />
+            app:layout_constraintEnd_toEndOf="@id/btn_do_re_lend"
+            app:layout_constraintTop_toTopOf="@id/btn_do_re_lend" />
 
         <TextView
             android:id="@+id/tv_do_re_lend_desc"
@@ -157,12 +158,12 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="16dp"
-            android:fontFamily="@font/spoqa_han_sans_neo_medium_f"
+            android:fontFamily="@font/spoqa_han_sans_neo_medium"
             android:gravity="end"
             android:text="@string/do_re_lend_desc"
             android:textColor="@color/dore_white"
             android:textSize="13dp"
-            app:layout_constraintBottom_toBottomOf="@id/iv_do_re_lend"
+            app:layout_constraintBottom_toBottomOf="@id/btn_do_re_lend"
             app:layout_constraintEnd_toStartOf="@id/guideline_do_re"
             app:layout_constraintStart_toStartOf="parent" />
 

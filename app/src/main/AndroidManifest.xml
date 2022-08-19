@@ -14,6 +14,9 @@
         android:theme="@style/Theme.DoReAndroid"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".presentation.help.HelpActivity"
+            android:exported="false" />
+        <activity
             android:name=".presentation.auth.SignInActivity"
             android:exported="true">
             <intent-filter>
@@ -24,8 +27,7 @@
         </activity>
         <activity
             android:name=".presentation.main.MainActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
             android:exported="true">
@@ -40,8 +42,9 @@
                     android:scheme="@string/kakao_redirect_scheme" />
             </intent-filter>
         </activity>
+
         <service
-            android:name="com.yjooooo.doreandroid.DoReMessagingService"
+            android:name=".DoReMessagingService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
