@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">DoReAndroid</string>
+
+    <!-- SignInFragment -->
+    <string name="sign_in_desc_kakao_login">카카오 로그인 버튼</string>
+    <string name="sign_in_kakao_login_failure_msg">카카오 로그인에 실패하였습니다.\n다시 시도해주세요.</string>
 </resources>
