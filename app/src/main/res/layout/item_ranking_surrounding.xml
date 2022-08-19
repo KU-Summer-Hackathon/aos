@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="surrounding"
+            type="com.yjooooo.doreandroid.presentation.ranking.SurroundingData" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_ranking_surrounding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginBottom="16dp">
+
+        <ImageView
+            android:id="@+id/iv_surrounding_certificate"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="12dp"
+            android:background="@color/dore_gray_5"
+            android:scaleType="centerCrop"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/ic_surrounding_mask"
+            app:layout_constraintBottom_toBottomOf="@id/iv_surrounding_certificate"
+            app:layout_constraintEnd_toEndOf="@id/iv_surrounding_certificate"
+            app:layout_constraintStart_toStartOf="@id/iv_surrounding_certificate"
+            app:layout_constraintTop_toTopOf="@id/iv_surrounding_certificate" />
+
+        <ImageView
+            android:id="@+id/iv_surrounding_diamond"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginBottom="12dp"
+            android:src="@drawable/ic_diamond"
+            app:layout_constraintBottom_toBottomOf="@id/iv_surrounding_certificate"
+            app:layout_constraintStart_toStartOf="@id/iv_surrounding_certificate" />
+
+        <TextView
+            android:id="@+id/tv_surrounding_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:fontFamily="@font/spoqa_han_sans_neo_medium_f"
+            android:text="@{surrounding.city}"
+            android:textColor="@color/dore_white"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toBottomOf="@id/iv_surrounding_diamond"
+            app:layout_constraintStart_toEndOf="@id/iv_surrounding_diamond"
+            app:layout_constraintTop_toTopOf="@id/iv_surrounding_diamond" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="14dp"
+            android:fontFamily="@font/spoqa_han_sans_neo_medium_f"
+            android:text="@{surrounding.title}"
+            android:textColor="@color/dore_black"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/iv_surrounding_certificate"
+            app:layout_constraintTop_toBottomOf="@id/iv_surrounding_certificate" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -10,4 +10,6 @@
     <string name="sign_in_desc_kakao_login">카카오 로그인 버튼</string>
     <string name="sign_in_kakao_login_failure_msg">카카오 로그인에 실패하였습니다.\n다시 시도해주세요.</string>
     <string name="sign_in_sign_in_failure_msg">로그인에 실패하였습니다.\n다시 시도해주세요.</string>
+    <string name="ranking_our_ranking">우리 동네 순위</string>
+    <string name="ranking_see_around">주변 동네 둘러보기</string>
 </resources>
