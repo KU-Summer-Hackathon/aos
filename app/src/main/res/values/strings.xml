@@ -10,6 +10,16 @@
     <string name="sign_in_desc_kakao_login">카카오 로그인 버튼</string>
     <string name="sign_in_kakao_login_failure_msg">카카오 로그인에 실패하였습니다.\n다시 시도해주세요.</string>
     <string name="sign_in_sign_in_failure_msg">로그인에 실패하였습니다.\n다시 시도해주세요.</string>
+
+    <!-- RankingFragment -->
     <string name="ranking_our_ranking">우리 동네 순위</string>
     <string name="ranking_see_around">주변 동네 둘러보기</string>
+
+    <!-- DoReFragment -->
+    <string name="do_re_help">Help</string>
+    <string name="do_re_eat">Eat</string>
+    <string name="do_re_lend">Lend</string>
+    <string name="do_re_eat_desc">함께 식사할 이웃을 찾아보아요!</string>
+    <string name="do_re_help_desc">해결할 문제가 있으세요?\n이웃들의 도움을 받아보아요!</string>
+    <string name="do_re_lend_desc">필요한 물건이 있으세요?\n이웃들에게 빌려보아요!</string>
 </resources>

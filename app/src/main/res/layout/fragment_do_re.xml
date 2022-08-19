@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -12,13 +13,159 @@
         tools:background="@color/dore_black"
         tools:context=".presentation.dore.DoReFragment">
 
-        <!-- TODO: Update blank fragment layout -->
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Do-Re"
+            android:id="@+id/tv_do_re_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="@string/title_do_re"
             android:textColor="@color/dore_white"
-            android:textSize="100dp" />
+            android:textSize="22dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/btn_do_re_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="34dp"
+            android:layout_marginEnd="16dp"
+            android:background="@android:color/transparent"
+            android:padding="4dp"
+            android:src="@drawable/ic_send"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_do_re"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <ImageView
+            android:id="@+id/iv_do_re_help"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/shape_rect_white_10"
+            app:layout_constraintBottom_toTopOf="@id/iv_do_re_eat"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/guideline_do_re"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/iv_do_re_eat"
+            app:layout_constraintTop_toBottomOf="@id/tv_do_re_title"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/tv_do_re_help"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/do_re_help"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="@id/iv_do_re_help"
+            app:layout_constraintTop_toTopOf="@id/iv_do_re_help" />
+
+        <TextView
+            android:id="@+id/tv_do_re_help_desc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/spoqa_han_sans_neo_medium_f"
+            android:text="@string/do_re_help_desc"
+            android:textColor="@color/dore_white"
+            android:textSize="13dp"
+            app:layout_constraintBottom_toBottomOf="@id/iv_do_re_help"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guideline_do_re" />
+
+        <ImageView
+            android:id="@+id/iv_do_re_eat"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/shape_rect_white_10"
+            app:layout_constraintBottom_toTopOf="@id/iv_do_re_lend"
+            app:layout_constraintDimensionRatio="2.08"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_do_re_help" />
+
+        <TextView
+            android:id="@+id/tv_do_re_eat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/do_re_eat"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="@id/iv_do_re_eat"
+            app:layout_constraintStart_toStartOf="@id/iv_do_re_eat"
+            app:layout_constraintTop_toTopOf="@id/iv_do_re_eat" />
+
+        <TextView
+            android:id="@+id/tv_do_re_eat_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/spoqa_han_sans_neo_medium_f"
+            android:text="@string/do_re_eat_desc"
+            android:textColor="@color/black"
+            android:textSize="13dp"
+            app:layout_constraintEnd_toEndOf="@id/iv_do_re_eat"
+            app:layout_constraintStart_toStartOf="@id/iv_do_re_eat"
+            app:layout_constraintTop_toBottomOf="@id/tv_do_re_eat" />
+
+        <ImageView
+            android:id="@+id/iv_do_re_lend"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/shape_rect_white_10"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/iv_do_re_eat"
+            app:layout_constraintStart_toEndOf="@id/guideline_do_re"
+            app:layout_constraintTop_toBottomOf="@id/iv_do_re_eat" />
+
+        <TextView
+            android:id="@+id/tv_do_re_lend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/do_re_lend"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="@id/iv_do_re_lend"
+            app:layout_constraintTop_toTopOf="@id/iv_do_re_lend" />
+
+        <TextView
+            android:id="@+id/tv_do_re_lend_desc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/spoqa_han_sans_neo_medium_f"
+            android:gravity="end"
+            android:text="@string/do_re_lend_desc"
+            android:textColor="@color/dore_white"
+            android:textSize="13dp"
+            app:layout_constraintBottom_toBottomOf="@id/iv_do_re_lend"
+            app:layout_constraintEnd_toStartOf="@id/guideline_do_re"
+            app:layout_constraintStart_toStartOf="parent" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
