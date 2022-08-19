@@ -37,14 +37,18 @@ class SignInViewModel @Inject constructor(
     }
     val isInitUserInfo: LiveData<Event<Boolean>> = _isInitUserInfo
 
+    private val _isSuccessSignIn = MutableLiveData<Event<Boolean>>()
+    val isSuccessSignIn: LiveData<Event<Boolean>> = _isSuccessSignIn
+
     val kakaoLoginCallback: (OAuthToken?, Throwable?) -> Unit = { token, error ->
         if (error != null) {
             Timber.tag("kakao").e(error, "로그인 실패")
 
         } else if (token != null) {
             Timber.tag("kakao").d("로그인 성공 ${token.accessToken}")
-            _kakaoToken.value = token.accessToken
             initFcmToken()
+            _kakaoToken.value = token.accessToken
+            _isSuccessKakaoLogin.value = Event(true)
         }
     }
 
@@ -62,6 +66,7 @@ class SignInViewModel @Inject constructor(
                 )
             ).onSuccess { response ->
                 Timber.tag("SignIn_postSignIn").d(response.data.token.accessToken)
+                _isSuccessSignIn.postValue(Event(true))
             }.onFailure {
                 Timber.tag("SignIn_postSignIn").d(it.message.toString())
             }
