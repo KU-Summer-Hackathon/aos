@@ -8,7 +8,11 @@ import com.yjooooo.doreandroid.data.remote.repository.HelpRepository
 import com.yjooooo.doreandroid.util.Event
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import okhttp3.MediaType
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
+import okhttp3.RequestBody
+import okhttp3.RequestBody.Companion.toRequestBody
 import timber.log.Timber
 import java.lang.IllegalArgumentException
 import javax.inject.Inject
@@ -30,6 +34,8 @@ class HelpRequestViewModel @Inject constructor(
 
     private val _imgUrl2 = MutableLiveData<String>()
     var imgUrl2: LiveData<String> = _imgUrl2
+
+    private val map = mutableMapOf<String, @JvmSuppressWildcards RequestBody>()
 
     private val images = ArrayList<MultipartBody.Part>()
 
@@ -57,8 +63,10 @@ class HelpRequestViewModel @Inject constructor(
     }
 
     fun postHelpRequest() {
+        map["content"] =
+            requireNotNull(content.value).toRequestBody("text/plain".toMediaTypeOrNull())
         viewModelScope.launch {
-            helpRepository.postHelpRequest(requireNotNull(content.value), images)
+            helpRepository.postHelpRequest(map, images)
                 .onSuccess { response ->
                     Timber.tag("HelpRequest_postHelpRequest").d((response.toString()))
                     _isSuccessRequest.postValue(Event(true))

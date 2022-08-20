@@ -6,6 +6,7 @@ import com.yjooooo.doreandroid.data.remote.entity.response.NoDataResponse
 import com.yjooooo.doreandroid.data.remote.entity.response.OneHelp
 import com.yjooooo.doreandroid.data.remote.service.HelpService
 import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import javax.inject.Inject
 
 class HelpDataSourceImpl @Inject constructor(
@@ -13,10 +14,10 @@ class HelpDataSourceImpl @Inject constructor(
 ) : HelpDataSource {
     override suspend fun getHelps(): BaseResponse<HelpResponse> = helpService.getHelps()
     override suspend fun postHelpRequest(
-        content: String,
+        map: Map<String, @JvmSuppressWildcards RequestBody>,
         images: ArrayList<MultipartBody.Part>
     ): BaseResponse<String> =
-        helpService.postHelpRequest(content, images)
+        helpService.postHelpRequest(map, images)
 
     override suspend fun getOneHelp(helpId: Int): BaseResponse<OneHelp> =
         helpService.getOneHelp(helpId)

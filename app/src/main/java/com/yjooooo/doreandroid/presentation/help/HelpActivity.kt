@@ -7,12 +7,13 @@ import com.yjooooo.doreandroid.R
 import com.yjooooo.doreandroid.databinding.ActivityHelpBinding
 import com.yjooooo.doreandroid.presentation.base.BaseActivity
 import com.yjooooo.doreandroid.presentation.help_request.HelpRequestActivity
+import com.yjooooo.doreandroid.presentation.help_request.HelpRequestDialogFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class HelpActivity : BaseActivity<ActivityHelpBinding>(R.layout.activity_help) {
     private val helpViewModel by viewModels<HelpViewModel>()
-    private val helpAdapter = HelpAdapter { helpId -> helpViewModel.postHelpDo(helpId) }
+    private val helpAdapter = HelpAdapter { moveHelpDoDialog() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +32,10 @@ class HelpActivity : BaseActivity<ActivityHelpBinding>(R.layout.activity_help) {
         binding.btnHelpRequest.setOnClickListener {
             startActivity(Intent(this, HelpRequestActivity::class.java))
         }
+    }
+
+    private fun moveHelpDoDialog() {
+        HelpDoDialogFragment().show(supportFragmentManager, this.javaClass.name)
     }
 
     private fun initHelpRvAdapter() {

@@ -21,7 +21,7 @@ interface HelpService {
     @Multipart
     @POST("help")
     suspend fun postHelpRequest(
-        @Query("content") content: String,
+        @PartMap map: Map<String, @JvmSuppressWildcards RequestBody>,
         @Part images: ArrayList<MultipartBody.Part>
     ): BaseResponse<String>
 

@@ -10,11 +10,11 @@ import com.yjooooo.doreandroid.data.remote.entity.response.Help
 import com.yjooooo.doreandroid.databinding.ItemHelpBinding
 
 class HelpAdapter(
-    private val postHelpSubscribe: (Int) -> Unit,
+    private val moveHelpDoDialog: () -> Unit,
 ) : ListAdapter<Help, HelpAdapter.HelpViewHolder>(helpDiffUtil) {
     class HelpViewHolder(
         private val binding: ItemHelpBinding,
-        private val postHelpSubscribe: (Int) -> Unit
+        private val moveHelpDoDialog: () -> Unit,
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(help: Help) {
             binding.help = help
@@ -25,9 +25,7 @@ class HelpAdapter(
         private fun initHelpDoBtnClickListener(helpId: Int) {
             if (!requireNotNull(binding.help).requested) {
                 binding.btnHelpDo.setOnClickListener {
-                    binding.btnHelpDo.visibility = View.INVISIBLE
-                    binding.btnHelpDone.visibility = View.VISIBLE
-                    postHelpSubscribe(helpId)
+                    moveHelpDoDialog
                 }
             }
         }
@@ -40,7 +38,7 @@ class HelpAdapter(
                 parent,
                 false
             ),
-            postHelpSubscribe
+            moveHelpDoDialog
         )
 
     override fun onBindViewHolder(holder: HelpViewHolder, position: Int) {
