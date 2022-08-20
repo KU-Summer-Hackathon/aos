@@ -13,6 +13,7 @@ import androidx.core.content.ContextCompat
 import com.yjooooo.doreandroid.R
 import com.yjooooo.doreandroid.databinding.ActivityHelpRequestBinding
 import com.yjooooo.doreandroid.presentation.base.BaseActivity
+import com.yjooooo.doreandroid.presentation.lamp.LampActivity
 import com.yjooooo.doreandroid.util.EventObserver
 import com.yjooooo.doreandroid.util.MultiPartResolver
 import com.yjooooo.doreandroid.util.getImgUri
@@ -54,6 +55,7 @@ class HelpRequestActivity :
         initCloseBtnClickListener()
         initIsCancelRequestObserver()
         initIsSuccessRequestObserver()
+        initIsBuyLampObserver()
         initAddImgClickListener()
     }
 
@@ -66,6 +68,15 @@ class HelpRequestActivity :
     private fun initIsCancelRequestObserver() {
         helpRequestViewModel.isCancelRequest.observe(this, EventObserver { isCancel ->
             if (isCancel) {
+                finish()
+            }
+        })
+    }
+
+    private fun initIsBuyLampObserver() {
+        helpRequestViewModel.isBuyLamp.observe(this, EventObserver { isCancel ->
+            if (isCancel) {
+                startActivity(Intent(this, LampActivity::class.java))
                 finish()
             }
         })

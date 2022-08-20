@@ -57,7 +57,7 @@ class HelpRequestFailDialogFragment : DialogFragment() {
     private fun initBuyBtnClickListener() {
         binding.btnHelpRequestFailBuy.setOnClickListener {
             dismiss()
-            helpRequestViewModel.initIsCancelRequest(true)
+            helpRequestViewModel.initIsBuyLamp(true)
         }
     }
 

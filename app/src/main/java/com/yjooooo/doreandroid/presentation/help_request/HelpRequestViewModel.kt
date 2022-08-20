@@ -29,6 +29,9 @@ class HelpRequestViewModel @Inject constructor(
     private val _isCancelRequest = MutableLiveData<Event<Boolean>>()
     val isCancelRequest: LiveData<Event<Boolean>> = _isCancelRequest
 
+    private val _isBuyLamp = MutableLiveData<Event<Boolean>>()
+    val isBuyLamp: LiveData<Event<Boolean>> = _isBuyLamp
+
     private val _imgUrl1 = MutableLiveData<String>()
     var imgUrl1: LiveData<String> = _imgUrl1
 
@@ -44,6 +47,10 @@ class HelpRequestViewModel @Inject constructor(
 
     fun initIsCancelRequest(isCancel: Boolean) {
         _isCancelRequest.value = Event(isCancel)
+    }
+
+    fun initIsBuyLamp(isBuyLamp: Boolean) {
+        _isBuyLamp.value = Event(isBuyLamp)
     }
 
     fun increaseImgCount() {
