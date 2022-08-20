@@ -14,3 +14,10 @@ data class Help(
     val userName: String
 )
 
+data class OneHelp(
+    val content: String,
+    val helpId: Int,
+    val userImageUrl: String,
+    val userName: String
+)
+

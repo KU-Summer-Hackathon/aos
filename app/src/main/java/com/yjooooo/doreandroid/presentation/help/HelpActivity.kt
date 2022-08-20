@@ -12,7 +12,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class HelpActivity : BaseActivity<ActivityHelpBinding>(R.layout.activity_help) {
     private val helpViewModel by viewModels<HelpViewModel>()
-    private val helpAdapter = HelpAdapter()
+    private val helpAdapter = HelpAdapter { helpId -> helpViewModel.postHelpDo(helpId) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

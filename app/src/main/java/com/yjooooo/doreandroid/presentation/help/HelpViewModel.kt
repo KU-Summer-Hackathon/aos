@@ -4,10 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import androidx.recyclerview.widget.DiffUtil
 import com.yjooooo.doreandroid.data.remote.entity.response.Help
 import com.yjooooo.doreandroid.data.remote.repository.HelpRepository
-import com.yjooooo.doreandroid.presentation.ranking.SurroundingData
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import timber.log.Timber
@@ -32,6 +30,18 @@ class HelpViewModel @Inject constructor(
                     _helpList.postValue(response.data.helps)
                 }.onFailure {
                     Timber.tag("Help_getHelps").d(it.message.toString())
+                }
+        }
+    }
+
+    fun postHelpDo(helpId: Int) {
+        viewModelScope.launch {
+            helpRepository.postHelpDo(helpId)
+                .onSuccess { response ->
+                    Timber.tag("Help_postHelpSubscribe").d((response.toString()))
+                }
+                .onFailure {
+                    Timber.tag("Help_postHelpSubscribe").d(it.message.toString())
                 }
         }
     }

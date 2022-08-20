@@ -1,6 +1,7 @@
 package com.yjooooo.doreandroid.presentation.help
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -8,13 +9,27 @@ import androidx.recyclerview.widget.RecyclerView
 import com.yjooooo.doreandroid.data.remote.entity.response.Help
 import com.yjooooo.doreandroid.databinding.ItemHelpBinding
 
-class HelpAdapter : ListAdapter<Help, HelpAdapter.HelpViewHolder>(helpDiffUtil) {
+class HelpAdapter(
+    private val postHelpSubscribe: (Int) -> Unit,
+) : ListAdapter<Help, HelpAdapter.HelpViewHolder>(helpDiffUtil) {
     class HelpViewHolder(
-        private val binding: ItemHelpBinding
+        private val binding: ItemHelpBinding,
+        private val postHelpSubscribe: (Int) -> Unit
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(help: Help) {
             binding.help = help
             binding.executePendingBindings()
+            initHelpDoBtnClickListener(requireNotNull(help.helpId))
+        }
+
+        private fun initHelpDoBtnClickListener(helpId: Int) {
+            if (!requireNotNull(binding.help).requested) {
+                binding.btnHelpDo.setOnClickListener {
+                    binding.btnHelpDo.visibility = View.INVISIBLE
+                    binding.btnHelpDone.visibility = View.VISIBLE
+                    postHelpSubscribe(helpId)
+                }
+            }
         }
     }
 
@@ -24,7 +39,8 @@ class HelpAdapter : ListAdapter<Help, HelpAdapter.HelpViewHolder>(helpDiffUtil) 
                 LayoutInflater.from(parent.context),
                 parent,
                 false
-            )
+            ),
+            postHelpSubscribe
         )
 
     override fun onBindViewHolder(holder: HelpViewHolder, position: Int) {

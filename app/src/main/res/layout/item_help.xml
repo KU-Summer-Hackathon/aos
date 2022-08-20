@@ -98,7 +98,7 @@
             app:layout_constraintEnd_toEndOf="parent" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_help_subscribe"
+            android:id="@+id/btn_help_done"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/dore_gray_5"
@@ -109,7 +109,7 @@
             android:paddingHorizontal="10dp"
             android:paddingVertical="6dp"
             android:stateListAnimator="@null"
-            android:text="@string/help_do_subscribe"
+            android:text="@string/help_done"
             android:textColor="@color/dore_white"
             android:textSize="14dp"
             android:visibility="@{help.requested ? View.VISIBLE : View.INVISIBLE}"
