@@ -17,6 +17,9 @@ import javax.inject.Inject
 class HelpViewModel @Inject constructor(
     private val helpRepository: HelpRepository
 ) : ViewModel() {
+    private val _isLoading = MutableLiveData(false)
+    val isLoading: LiveData<Boolean> = _isLoading
+
     private val _address = MutableLiveData<String>()
     val address: LiveData<String> = _address
 
@@ -32,17 +35,23 @@ class HelpViewModel @Inject constructor(
     private val _isSuccessPostHelp = MutableLiveData<Event<Boolean>>()
     val isSuccessPostHelp: LiveData<Event<Boolean>> = _isSuccessPostHelp
 
+    private fun initIsLoading(isLoading: Boolean) {
+        _isLoading.value = isLoading
+    }
+
     fun initOneHelpId(helpId: Int) {
         oneHelpId = helpId
     }
 
     fun getHelps() {
+        initIsLoading(true)
         viewModelScope.launch {
             helpRepository.getHelps()
                 .onSuccess { response ->
                     Timber.tag("Help_getHelps").d(response.data.toString())
                     _address.postValue(response.data.address)
                     _helpList.postValue(response.data.helps)
+                    initIsLoading(false)
                 }.onFailure {
                     Timber.tag("Help_getHelps").d(it.message.toString())
                 }

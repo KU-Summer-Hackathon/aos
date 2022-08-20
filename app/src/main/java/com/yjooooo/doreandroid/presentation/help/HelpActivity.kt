@@ -20,6 +20,7 @@ class HelpActivity : BaseActivity<ActivityHelpBinding>(R.layout.activity_help) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding.helpViewModel = helpViewModel
         helpViewModel.getHelps()
         initBackBtnClickListener()
         initHelpRequestBtnClickListener()
