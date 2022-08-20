@@ -15,15 +15,24 @@ import javax.inject.Inject
 class MessageViewModel @Inject constructor(
     private val messageRepository: MessageRepository
 ) : ViewModel() {
+    private val _isLoading = MutableLiveData(false)
+    val isLoading: LiveData<Boolean> = _isLoading
+
     private val _messageRooms = MutableLiveData<List<MessageRoom>>()
     val messageRooms: LiveData<List<MessageRoom>> = _messageRooms
 
+    private fun initIsLoading(isLoading: Boolean) {
+        _isLoading.value = isLoading
+    }
+
     fun getMessageRooms() {
+        initIsLoading(true)
         viewModelScope.launch {
             messageRepository.getMessageRooms()
                 .onSuccess { response ->
                     Timber.tag("Message_getMessageRooms").d(response.data.toString())
                     _messageRooms.postValue(requireNotNull(response.data))
+                    initIsLoading(false)
                 }
                 .onFailure {
                     Timber.tag("Message_getMessageRooms").d(it.message.toString())

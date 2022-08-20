@@ -18,6 +18,7 @@ class MessageActivity : BaseActivity<ActivityMessageBinding>(R.layout.activity_m
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding.messageViewModel = messageViewModel
         messageViewModel.getMessageRooms()
         initBackBtnClickListener()
         initMessageRoomRvAdapter()

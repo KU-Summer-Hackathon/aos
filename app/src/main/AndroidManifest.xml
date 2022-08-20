@@ -22,6 +22,9 @@
         android:theme="@style/Theme.DoReAndroid"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".presentation.lamp.LampActivity"
+            android:exported="false" />
+        <activity
             android:name=".presentation.message_room.MessageRoomActivity"
             android:exported="false" />
         <activity
