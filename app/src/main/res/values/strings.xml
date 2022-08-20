@@ -29,6 +29,7 @@
 
     <!-- HelpActivity -->
     <string name="help_do_help">돕기</string>
+    <string name="help_do_subscribe">신청</string>
     <string name="help_request_help">도움 요청</string>
 
     <!-- HelpRequestActivity -->

@@ -5,6 +5,11 @@
 
     <data>
 
+        <import type="android.view.View" />
+
+        <variable
+            name="messageRoom"
+            type="com.yjooooo.doreandroid.data.remote.entity.response.MessageRoom" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -17,7 +22,7 @@
 
         <ImageView
             android:id="@+id/iv_message_profile"
-            profileImgUri=""
+            profileImgUri="@{messageRoom.userImageUrl}"
             android:layout_width="30dp"
             android:layout_height="30dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -30,7 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
             android:fontFamily="@font/spoqa_han_sans_neo_bold"
-            android:text="이영서"
+            android:text="@{messageRoom.userName}"
             android:textColor="@color/dore_text_black"
             android:textSize="18dp"
             app:layout_constraintBottom_toBottomOf="@id/iv_message_profile"
@@ -43,7 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:fontFamily="@font/spoqa_han_sans_neo_medium"
-            android:text="최인영님이 돕고 싶어해요, 확인해보세요!"
+            android:text="@{messageRoom.content}"
             android:textColor="@color/dore_gray_6"
             android:textSize="14dp"
             app:layout_constraintStart_toStartOf="@id/iv_message_profile"
@@ -54,6 +59,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_dot_yellow"
+            android:visibility="@{messageRoom.isRead ? View.INVISIBLE : View.VISIBLE}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
