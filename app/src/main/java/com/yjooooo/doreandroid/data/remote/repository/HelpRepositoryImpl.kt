@@ -18,7 +18,7 @@ class HelpRepositoryImpl @Inject constructor(
     override suspend fun postHelpRequest(
         map: Map<String, @JvmSuppressWildcards RequestBody>,
         images: ArrayList<MultipartBody.Part>
-    ): Result<BaseResponse<String>> =
+    ): Result<BaseResponse<Boolean>> =
         kotlin.runCatching { helpDataSource.postHelpRequest(map, images) }
 
     override suspend fun getOneHelp(helpId: Int): Result<BaseResponse<OneHelp>> =

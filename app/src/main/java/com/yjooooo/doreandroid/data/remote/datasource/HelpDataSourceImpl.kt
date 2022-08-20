@@ -16,7 +16,7 @@ class HelpDataSourceImpl @Inject constructor(
     override suspend fun postHelpRequest(
         map: Map<String, @JvmSuppressWildcards RequestBody>,
         images: ArrayList<MultipartBody.Part>
-    ): BaseResponse<String> =
+    ): BaseResponse<Boolean> =
         helpService.postHelpRequest(map, images)
 
     override suspend fun getOneHelp(helpId: Int): BaseResponse<OneHelp> =

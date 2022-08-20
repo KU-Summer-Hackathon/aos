@@ -23,7 +23,7 @@ interface HelpService {
     suspend fun postHelpRequest(
         @PartMap map: Map<String, @JvmSuppressWildcards RequestBody>,
         @Part images: ArrayList<MultipartBody.Part>
-    ): BaseResponse<String>
+    ): BaseResponse<Boolean>
 
     @GET("help/{helpId}")
     suspend fun getOneHelp(

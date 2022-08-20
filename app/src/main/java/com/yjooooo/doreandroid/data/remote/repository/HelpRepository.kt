@@ -13,7 +13,7 @@ interface HelpRepository {
     suspend fun postHelpRequest(
         map: Map<String, @JvmSuppressWildcards RequestBody>,
         images: ArrayList<MultipartBody.Part>
-    ): Result<BaseResponse<String>>
+    ): Result<BaseResponse<Boolean>>
 
     suspend fun getOneHelp(helpId: Int): Result<BaseResponse<OneHelp>>
 

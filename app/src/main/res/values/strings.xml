@@ -42,4 +42,9 @@
     <string name="help_request_sum">%d/30</string>
     <string name="help_request_success">도움 요청 완료!</string>
     <string name="help_do_desc">도움을 제안하면 프로필이 전송됩니다.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="help_request_fail_title">램프가 부족합니다</string>
+    <string name="help_request_fail_content">램프가 부족하여 도움을 요청할 수 없습니다.\n램프는 구매 또는 돕기를 통해 획득할 수 있습니다.</string>
+    <string name="help_request_fail_buy">구매하기</string>
 </resources>

@@ -76,6 +76,8 @@ class HelpRequestActivity :
             if (isSuccess) {
                 showToast(getString(R.string.help_request_success))
                 finish()
+            } else {
+                HelpRequestFailDialogFragment().show(supportFragmentManager, this.javaClass.name)
             }
         })
     }

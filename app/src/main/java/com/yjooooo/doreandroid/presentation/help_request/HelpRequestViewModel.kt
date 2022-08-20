@@ -69,7 +69,7 @@ class HelpRequestViewModel @Inject constructor(
             helpRepository.postHelpRequest(map, images)
                 .onSuccess { response ->
                     Timber.tag("HelpRequest_postHelpRequest").d((response.toString()))
-                    _isSuccessRequest.postValue(Event(true))
+                    _isSuccessRequest.postValue(Event(response.data))
                 }
                 .onFailure {
                     Timber.tag("HelpRequest_postHelpRequest").d((it.message.toString()))
