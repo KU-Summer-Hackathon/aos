@@ -5,6 +5,11 @@
 
     <data>
 
+        <import type="android.view.View" />
+
+        <variable
+            name="helpRequestViewModel"
+            type="com.yjooooo.doreandroid.presentation.help_request.HelpRequestViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -82,21 +87,27 @@
 
         <ImageView
             android:id="@+id/iv_help_request_1"
+            imageUri="@{helpRequestViewModel.imgUrl1}"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="12dp"
             android:background="@color/dore_gray_7"
+            android:scaleType="centerCrop"
+            android:visibility="@{helpRequestViewModel.imgCount >= 1  ? View.VISIBLE: View.GONE}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/view_help_request" />
 
         <ImageView
             android:id="@+id/iv_help_request_2"
+            imageUri="@{helpRequestViewModel.imgUrl2}"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="12dp"
             android:background="@color/dore_gray_7"
+            android:scaleType="centerCrop"
+            android:visibility="@{helpRequestViewModel.imgCount == 2  ? View.VISIBLE: View.GONE}"
             app:layout_constraintStart_toEndOf="@id/iv_help_request_1"
             app:layout_constraintTop_toBottomOf="@id/view_help_request"
             app:layout_goneMarginStart="16dp" />
@@ -109,6 +120,7 @@
             android:layout_marginTop="12dp"
             android:background="@color/dore_gray_3"
             android:src="@drawable/ic_add"
+            android:visibility="@{helpRequestViewModel.imgCount >= 2 ? View.GONE : View.VISIBLE}"
             app:layout_constraintStart_toEndOf="@id/iv_help_request_2"
             app:layout_constraintTop_toBottomOf="@id/view_help_request"
             app:layout_goneMarginStart="16dp" />

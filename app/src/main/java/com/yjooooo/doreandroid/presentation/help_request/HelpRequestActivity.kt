@@ -14,14 +14,20 @@ import com.yjooooo.doreandroid.R
 import com.yjooooo.doreandroid.databinding.ActivityHelpRequestBinding
 import com.yjooooo.doreandroid.presentation.base.BaseActivity
 import com.yjooooo.doreandroid.util.EventObserver
+import com.yjooooo.doreandroid.util.MultiPartResolver
 import com.yjooooo.doreandroid.util.getImgUri
 import com.yjooooo.doreandroid.util.getPathFromUri
+import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 import java.io.File
 import java.lang.NullPointerException
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class HelpRequestActivity :
     BaseActivity<ActivityHelpRequestBinding>(R.layout.activity_help_request) {
+    @Inject
+    lateinit var multiPartResolver: MultiPartResolver
     private val helpRequestViewModel by viewModels<HelpRequestViewModel>()
 
     private var imgUri: Uri? = null
@@ -32,13 +38,18 @@ class HelpRequestActivity :
         imgUri?.let { uri ->
             Thread.sleep(700)
             if (File(getPathFromUri(this, uri)).exists()) {
-
+                with(helpRequestViewModel) {
+                    initImgUrl(uri.toString())
+                    addImage(multiPartResolver.createImgMultiPart(uri))
+                    increaseImgCount()
+                }
             }
         }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding.helpRequestViewModel = helpRequestViewModel
         initCloseBtnClickListener()
         initIsCancelRequestObserver()
         initAddImgClickListener()
