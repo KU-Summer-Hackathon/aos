@@ -16,8 +16,8 @@
         android:label="DoReFragment"
         tools:layout="@layout/fragment_do_re"/>
     <fragment
-        android:id="@+id/myFragment"
-        android:name="com.yjooooo.doreandroid.presentation.my.MyFragment"
-        android:label="MyFragment"
-        tools:layout="@layout/fragment_my"/>
+        android:id="@+id/profileFragment"
+        android:name="com.yjooooo.doreandroid.presentation.profile.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile"/>
 </navigation>

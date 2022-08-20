@@ -3,9 +3,9 @@
     <string name="binding_error">Binding not initialized to reference the view.</string>
 
     <!-- BottomNavigation -->
-    <string name="title_ranking">Ranking</string>
-    <string name="title_do_re">Do-re</string>
-    <string name="title_my">My</string>
+    <string name="title_ranking">랭킹</string>
+    <string name="title_do_re">두레</string>
+    <string name="title_profile">프로필</string>
     <string name="title_help">도와두레</string>
     <string name="title_eat">먹어두레</string>
     <string name="title_lend">빌려두레</string>
@@ -72,4 +72,10 @@
 
     <!-- MessageRoom_message_complete_help -->
     <string name="message_complete_help">도움 해결 완료!</string>
+
+    <!-- ProfileFragment -->
+    <string name="profile_distance">이웃과의 거리</string>
+    <string name="profile_lamp_count">보유 램프</string>
+    <string name="profile_dore_count">내가 참여한 두레</string>
+    <string name="profile_badge">획득한 뱃지</string>
 </resources>

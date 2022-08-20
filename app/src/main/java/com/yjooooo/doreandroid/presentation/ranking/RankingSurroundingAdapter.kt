@@ -1,15 +1,13 @@
 package com.yjooooo.doreandroid.presentation.ranking
 
-import android.animation.Animator
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.yjooooo.doreandroid.R
 import com.yjooooo.doreandroid.databinding.ItemRankingSurroundingBinding
-import java.lang.IllegalStateException
+import timber.log.Timber
 
 class RankingSurroundingAdapter :
     ListAdapter<SurroundingData, RankingSurroundingAdapter.SurroundingViewHolder>(
