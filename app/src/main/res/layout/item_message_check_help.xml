@@ -5,6 +5,9 @@
 
     <data>
 
+        <variable
+            name="msgCheckHelp"
+            type="com.yjooooo.doreandroid.data.remote.entity.response.Message" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -66,7 +69,7 @@
                 android:layout_marginVertical="2dp"
                 android:layout_marginStart="16dp"
                 android:fontFamily="@font/spoqa_han_sans_neo_medium"
-                android:text="오늘 하루 어땠는지 물어보기"
+                android:text="@{msgCheckHelp.messageContent}"
                 android:textColor="@color/dore_text_black"
                 android:textSize="14dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -92,7 +95,7 @@
             android:layout_marginStart="6dp"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/spoqa_han_sans_neo_medium"
-            android:text="@string/check_help_mission_question"
+            android:text="@{@string/check_help_mission_question(msgCheckHelp.userName)}"
             android:textColor="@color/dore_gray_6"
             android:textSize="12dp"
             app:layout_constraintEnd_toEndOf="parent"

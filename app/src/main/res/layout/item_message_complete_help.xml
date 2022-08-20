@@ -11,8 +11,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="28dp"
         android:paddingVertical="12dp"
-        tools:background="@color/dore_white">
+        android:background="@color/dore_white">
 
         <ImageView
             android:id="@+id/iv_message_complete_help"

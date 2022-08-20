@@ -57,6 +57,7 @@
     <string name="message_help_result_pending">수락 대기 중입니다.</string>
     <string name="message_help_result_accepted">수락되었습니다.</string>
     <string name="message_help_result_accept">수락했습니다.</string>
+    <string name="message_help_user_info">%s, %d세</string>
 
     <!-- MessageRoom_message_mission -->
     <string name="title_mission">Mission</string>
@@ -68,5 +69,7 @@
     <string name="check_help_mission_question">%s님이 미션을 수행하셨나요?</string>
     <string name="message_check_help_no">아니오</string>
     <string name="message_check_help_yes">네</string>
+
+    <!-- MessageRoom_message_complete_help -->
     <string name="message_complete_help">도움 해결 완료!</string>
 </resources>

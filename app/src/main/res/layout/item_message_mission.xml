@@ -5,15 +5,19 @@
 
     <data>
 
+        <variable
+            name="msgMission"
+            type="com.yjooooo.doreandroid.data.remote.entity.response.Message" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="28dp"
+        android:background="@color/dore_yellow"
         android:paddingTop="20dp"
-        android:paddingBottom="24dp"
-        tools:background="@color/dore_yellow">
+        android:paddingBottom="24dp">
 
         <TextView
             android:id="@+id/tv_message_mission_title"
@@ -46,7 +50,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/spoqa_han_sans_neo_medium"
                 android:gravity="center"
-                android:text="오늘 하루 어땠는지 물어보기"
+                android:text="@{msgMission.messageContent}"
                 android:textColor="@color/dore_text_black"
                 android:textSize="14dp"
                 app:layout_constraintEnd_toEndOf="parent"
