@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="28dp"
+        android:background="@color/white"
+        android:padding="16dp"
+        tools:background="@color/dore_gray_1">
+
+        <TextView
+            android:id="@+id/tv_message_check_help_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/spoqa_han_sans_neo_medium"
+            android:text="@string/message_check_help_title"
+            android:textColor="@color/dore_text_black"
+            android:textSize="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_message_check_help_mission"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/dore_gray_2"
+            android:padding="16dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_message_check_help_title">
+
+            <TextView
+                android:id="@+id/tv_message_check_help_mission"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="2dp"
+                android:fontFamily="@font/spoqa_han_sans_neo_medium"
+                android:text="@string/message_check_help_mission"
+                android:textColor="@color/dore_gray_5"
+                android:textSize="14dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/view_message_check_help"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintBottom_toBottomOf="@id/tv_message_check_help_mission"
+                app:layout_constraintStart_toEndOf="@id/tv_message_check_help_mission"
+                app:layout_constraintTop_toTopOf="@id/tv_message_check_help_mission" />
+
+            <TextView
+                android:id="@+id/tv_message_check_help_mission_desc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="2dp"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/spoqa_han_sans_neo_medium"
+                android:text="오늘 하루 어땠는지 물어보기"
+                android:textColor="@color/dore_text_black"
+                android:textSize="14dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/view_message_check_help"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <CheckBox
+            android:id="@+id/checkbox_message_check"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            app:layout_constraintBottom_toBottomOf="@id/tv_message_check_help_mission_check"
+            app:layout_constraintEnd_toStartOf="@id/tv_message_check_help_mission_check"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_message_check_help_mission_check" />
+
+        <TextView
+            android:id="@+id/tv_message_check_help_mission_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/spoqa_han_sans_neo_medium"
+            android:text="@string/check_help_mission_question"
+            android:textColor="@color/dore_gray_6"
+            android:textSize="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/checkbox_message_check"
+            app:layout_constraintTop_toBottomOf="@id/layout_message_check_help_mission" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_message_check_help_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_message_check_help_mission_check">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_message_check_help_no"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@color/dore_red"
+                android:fontFamily="@font/spoqa_han_sans_neo_medium"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:paddingVertical="8dp"
+                android:text="@string/message_check_help_no"
+                android:textColor="@color/white"
+                android:textSize="14dp"
+                app:layout_constraintEnd_toStartOf="@id/btn_message_check_help_yes"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_message_check_help_yes"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:background="@color/dore_blue"
+                android:fontFamily="@font/spoqa_han_sans_neo_medium"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:paddingVertical="8dp"
+                android:text="@string/message_check_help_yes"
+                android:textColor="@color/white"
+                android:textSize="14dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/btn_message_check_help_no"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

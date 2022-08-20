@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="28dp"
+        tools:background="@color/dore_gray_6">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_message_help"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="16dp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_message_help_content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/spoqa_han_sans_neo_medium"
+                android:text="집에 있는 장롱을 버려야 하는데 도와주세요ㅠㅠ"
+                android:textColor="@color/dore_gray_6"
+                android:textSize="14dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_message_help"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@color/dore_blue"
+                android:clickable="false"
+                android:drawableStart="@drawable/ic_help_do"
+                android:drawablePadding="4dp"
+                android:fontFamily="@font/spoqa_han_sans_neo_medium"
+                android:minHeight="0dp"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="6dp"
+                android:stateListAnimator="@null"
+                android:text="@string/help_do_help"
+                android:textColor="@color/dore_white"
+                android:textSize="14dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_message_help_content" />
+
+            <TextView
+                android:id="@+id/tv_message_help_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/spoqa_han_sans_neo_medium"
+                android:text="이영서님이 돕고 싶어해요"
+                android:textColor="@color/dore_text_black"
+                android:textSize="16dp"
+                app:layout_constraintBottom_toBottomOf="@id/btn_message_help"
+                app:layout_constraintStart_toEndOf="@id/btn_message_help"
+                app:layout_constraintTop_toTopOf="@id/btn_message_help" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_message_help_user"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@color/dore_gray_2"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="18dp"
+                app:layout_constraintTop_toBottomOf="@id/btn_message_help">
+
+                <ImageView
+                    android:id="@+id/iv_message_help_profile"
+                    profileImgUri="null"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:src="@drawable/shape_circle_black" />
+
+                <TextView
+                    android:id="@+id/tv_message_help_user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/spoqa_han_sans_neo_bold"
+                    android:text="이영서"
+                    android:textColor="@color/dore_text_black"
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toEndOf="@id/iv_message_help_profile"
+                    app:layout_constraintTop_toTopOf="@id/iv_message_help_profile" />
+
+                <TextView
+                    android:id="@+id/tv_message_help_user_phone_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/spoqa_han_sans_neo_medium"
+                    android:text="010-0000-0000"
+                    android:textColor="@color/dore_blue"
+                    android:textSize="12dp"
+                    app:layout_constraintStart_toStartOf="@id/tv_message_help_user_name"
+                    app:layout_constraintTop_toBottomOf="@id/tv_message_help_user_name" />
+
+                <TextView
+                    android:id="@+id/tv_message_help_user_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/spoqa_han_sans_neo_medium"
+                    android:text="여자, 31세"
+                    android:textColor="@color/dore_gray_6"
+                    android:textSize="12dp"
+                    app:layout_constraintBottom_toTopOf="@id/tv_message_help_user_phone_num"
+                    app:layout_constraintStart_toEndOf="@id/tv_message_help_user_name" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_message_help_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@id/layout_message_help_user">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_message_help_no"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/dore_red"
+                    android:fontFamily="@font/spoqa_han_sans_neo_medium"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:paddingVertical="8dp"
+                    android:text="@string/message_help_no"
+                    android:textColor="@color/white"
+                    android:textSize="14dp"
+                    app:layout_constraintEnd_toStartOf="@id/btn_message_help_yes"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_message_help_yes"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:background="@color/dore_blue"
+                    android:fontFamily="@font/spoqa_han_sans_neo_medium"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:paddingVertical="8dp"
+                    android:text="@string/message_help_yes"
+                    android:textColor="@color/white"
+                    android:textSize="14dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/btn_message_help_no"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_message_help_result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:paddingVertical="8dp"
+                app:layout_constraintTop_toBottomOf="@id/layout_message_help_user">
+
+                <TextView
+                    android:id="@+id/tv_message_help_result"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/spoqa_han_sans_neo_medium"
+                    android:gravity="center"
+                    android:text="@string/message_help_result_pending"
+                    android:textColor="@color/dore_gray_6"
+                    android:textSize="14dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/triangle_message_help_you"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/ic_message_triangle"
+            app:layout_constraintStart_toStartOf="@id/layout_message_help"
+            app:layout_constraintTop_toBottomOf="@id/layout_message_help" />
+
+        <ImageView
+            android:id="@+id/triangle_message_help_me"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/ic_message_triangle"
+            app:layout_constraintEnd_toEndOf="@id/layout_message_help"
+            app:layout_constraintTop_toBottomOf="@id/layout_message_help" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -11,10 +11,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/ic_bg_pattern"
-        tools:context=".presentation.message.MessageActivity">
+        tools:context=".presentation.message_room.MessageRoomActivity">
 
         <ImageButton
-            android:id="@+id/btn_message_back"
+            android:id="@+id/btn_message_room_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="6dp"
@@ -26,21 +26,22 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tv_message_title"
+            android:id="@+id/tv_message_room_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="6dp"
             android:fontFamily="@font/spoqa_han_sans_neo_bold"
             android:includeFontPadding="false"
-            android:text="@string/title_message"
             android:textColor="@color/white"
             android:textSize="22dp"
-            app:layout_constraintBottom_toBottomOf="@id/btn_message_back"
-            app:layout_constraintStart_toEndOf="@id/btn_message_back"
-            app:layout_constraintTop_toTopOf="@id/btn_message_back" />
+            app:layout_constraintBottom_toBottomOf="@id/btn_message_room_back"
+            app:layout_constraintStart_toEndOf="@id/btn_message_room_back"
+            app:layout_constraintTop_toTopOf="@id/btn_message_room_back"
+            tools:text="이영서" />
+
 
         <ImageButton
-            android:id="@+id/btn_message_more"
+            android:id="@+id/btn_message_room_more"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="26dp"
@@ -53,7 +54,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_message_room"
+            android:id="@+id/rv_message_room_message"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginTop="32dp"
@@ -62,8 +63,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            tools:listitem="@layout/item_message_room"
-            app:layout_constraintTop_toBottomOf="@id/tv_message_title" />
+            app:layout_constraintTop_toBottomOf="@id/tv_message_room_name" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

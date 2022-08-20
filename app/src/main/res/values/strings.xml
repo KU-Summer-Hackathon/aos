@@ -9,7 +9,7 @@
     <string name="title_help">도와두레</string>
     <string name="title_eat">먹어두레</string>
     <string name="title_lend">빌려두레</string>
-    <string name="title_message">Messages</string>
+    <string name="title_message">메시지</string>
     <string name="title_help_request">도움 요청</string>
     <string name="title_help_do">도와주기</string>
 
@@ -35,16 +35,38 @@
 
     <!-- HelpRequestActivity -->
     <string name="help_request_text_hint">내용을 입력해주세요.</string>
-    <string name="help_request_cancel_title">작성을 취소하시겠습니까?</string>
-    <string name="help_request_cancel_content">지금까지 작성 된 글은 모두 삭제됩니다.</string>
-    <string name="help_request_cancel_delete">삭제</string>
     <string name="help_request_done">작성 완료</string>
     <string name="help_request_sum">%d/30</string>
     <string name="help_request_success">도움 요청 완료!</string>
     <string name="help_do_desc">도움을 제안하면 프로필이 전송됩니다.</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- HelpRequestDialog -->
+    <string name="help_request_cancel_title">작성을 취소하시겠습니까?</string>
+    <string name="help_request_cancel_content">지금까지 작성 된 글은 모두 삭제됩니다.</string>
+    <string name="help_request_cancel_delete">삭제</string>
+
+    <!-- HelpRequestFailDialog -->
     <string name="help_request_fail_title">램프가 부족합니다</string>
     <string name="help_request_fail_content">램프가 부족하여 도움을 요청할 수 없습니다.\n램프는 구매 또는 돕기를 통해 획득할 수 있습니다.</string>
     <string name="help_request_fail_buy">구매하기</string>
+
+    <!-- MessageRoomActivity -->
+    <!-- MessageRoom_message_help -->
+    <string name="message_help_no">거절</string>
+    <string name="message_help_yes">수락</string>
+    <string name="message_help_result_pending">수락 대기 중입니다.</string>
+    <string name="message_help_result_accepted">수락되었습니다.</string>
+    <string name="message_help_result_accept">수락했습니다.</string>
+
+    <!-- MessageRoom_message_mission -->
+    <string name="title_mission">Mission</string>
+    <string name="message_mission_lamp_desc">상대방에게 미션을 인증받으면 램프가 지급됩니다.</string>
+
+    <!-- MessageRoom_message_check_help -->
+    <string name="message_check_help_title">도움을 잘 받으셨나요?</string>
+    <string name="message_check_help_mission">미션</string>
+    <string name="check_help_mission_question">%s님이 미션을 수행하셨나요?</string>
+    <string name="message_check_help_no">아니오</string>
+    <string name="message_check_help_yes">네</string>
+    <string name="message_complete_help">도움 해결 완료!</string>
 </resources>
