@@ -34,7 +34,7 @@
             android:layout_marginEnd="6dp"
             android:background="@android:color/transparent"
             android:padding="10dp"
-            android:src="@drawable/ic_close"
+            android:src="@drawable/ic_close_white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -122,7 +122,8 @@
             android:fontFamily="@font/spoqa_han_sans_neo_medium"
             android:minHeight="0dp"
             android:paddingVertical="12dp"
-            android:text="작성 완료"
+            android:stateListAnimator="@null"
+            android:text="@string/help_request_done"
             android:textColor="@color/dore_white"
             android:textSize="14dp"
             app:layout_constraintBottom_toBottomOf="parent"
