@@ -11,6 +11,7 @@
     <string name="title_lend">Lend</string>
     <string name="title_message">Messages</string>
     <string name="title_help_request">도움 요청</string>
+    <string name="title_help_do">도와주기</string>
 
     <!-- SignInFragment -->
     <string name="sign_in_desc_kakao_login">카카오 로그인 버튼</string>
@@ -40,4 +41,5 @@
     <string name="help_request_done">작성 완료</string>
     <string name="help_request_sum">%d/30</string>
     <string name="help_request_success">도움 요청 완료!</string>
+    <string name="help_do_desc">도움을 제안하면 프로필이 전송됩니다.</string>
 </resources>

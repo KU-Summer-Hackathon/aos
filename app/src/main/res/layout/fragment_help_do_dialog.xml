@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="help"
+            type="com.yjooooo.doreandroid.data.remote.entity.response.OneHelp" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".presentation.help.HelpDoDialogFragment">
+
+
+        <ImageButton
+            android:id="@+id/btn_help_do_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="6dp"
+            android:background="@android:color/transparent"
+            android:padding="10dp"
+            android:src="@drawable/ic_close_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_help_do_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/spoqa_han_sans_neo_bold"
+            android:text="@string/title_help_do"
+            android:textColor="@color/dore_text_black"
+            android:textSize="18dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_help_do_profile"
+            profileImgUri="@{help.userImageUrl}"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="26dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_help_do_title"
+            tools:src="@drawable/shape_circle_black" />
+
+        <TextView
+            android:id="@+id/tv_help_do_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:fontFamily="@font/spoqa_han_sans_neo_bold"
+            android:text="@{help.userName}"
+            android:textColor="@color/dore_text_black"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="@id/iv_help_do_profile"
+            app:layout_constraintStart_toEndOf="@id/iv_help_do_profile"
+            app:layout_constraintTop_toTopOf="@id/iv_help_do_profile"
+            tools:text="최인영" />
+
+        <TextView
+            android:id="@+id/tv_help_do_content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/spoqa_han_sans_neo_medium"
+            android:text="@{help.content}"
+            android:textColor="@color/dore_text_black"
+            android:textSize="14dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/iv_help_do_profile"
+            app:layout_constraintTop_toBottomOf="@id/iv_help_do_profile"
+            tools:text="집에 있는 장롱을 버려야 하는데 도와주세요ㅠㅠ" />
+
+        <View
+            android:id="@+id/view_division"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="12dp"
+            android:background="@color/dore_gray_2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_help_do_content" />
+
+        <TextView
+            android:id="@+id/tv_help_do_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/spoqa_han_sans_neo_medium"
+            android:text="@string/help_do_desc"
+            android:textColor="@color/dore_gray_6"
+            android:textSize="14dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view_division" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_help_do_confirm"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@color/dore_blue"
+            android:fontFamily="@font/spoqa_han_sans_neo_medium"
+            android:minHeight="0dp"
+            android:paddingVertical="10dp"
+            android:stateListAnimator="@null"
+            android:text="@string/help_do_help"
+            android:textColor="@color/dore_white"
+            android:textSize="14dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_help_do_desc" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
