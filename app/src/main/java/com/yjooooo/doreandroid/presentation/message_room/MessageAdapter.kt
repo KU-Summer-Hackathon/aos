@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.yjooooo.doreandroid.R
 import com.yjooooo.doreandroid.data.local.MessageType.Companion.ACCEPTED_HELP
 import com.yjooooo.doreandroid.data.local.MessageType.Companion.ACCEPT_HELP
 import com.yjooooo.doreandroid.data.local.MessageType.Companion.CHECK_HELP
@@ -26,6 +27,16 @@ class MessageAdapter :
         fun bind(message: Message) {
             binding.msgHelp = message
             binding.executePendingBindings()
+            initResultMsg(message.type)
+        }
+
+        private fun initResultMsg(type: Int) {
+            binding.tvMessageHelpResult.text = when (type) {
+                ACCEPT_HELP -> binding.root.resources.getString(R.string.message_help_result_accept)
+                ACCEPTED_HELP -> binding.root.resources.getString(R.string.message_help_result_accepted)
+                PENDING_HELP -> binding.root.resources.getString(R.string.message_help_result_pending)
+                else -> ""
+            }
         }
     }
 
