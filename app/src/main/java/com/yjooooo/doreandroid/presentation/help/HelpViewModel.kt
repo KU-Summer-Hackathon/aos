@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.yjooooo.doreandroid.data.remote.entity.response.Help
 import com.yjooooo.doreandroid.data.remote.entity.response.OneHelp
 import com.yjooooo.doreandroid.data.remote.repository.HelpRepository
+import com.yjooooo.doreandroid.util.Event
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import timber.log.Timber
@@ -27,6 +28,9 @@ class HelpViewModel @Inject constructor(
 
     private val _oneHelp = MutableLiveData<OneHelp>()
     val oneHelp: LiveData<OneHelp> = _oneHelp
+
+    private val _isSuccessPostHelp = MutableLiveData<Event<Boolean>>()
+    val isSuccessPostHelp: LiveData<Event<Boolean>> = _isSuccessPostHelp
 
     fun initOneHelpId(helpId: Int) {
         oneHelpId = helpId
@@ -62,10 +66,11 @@ class HelpViewModel @Inject constructor(
         viewModelScope.launch {
             helpRepository.postHelpDo(helpId)
                 .onSuccess { response ->
-                    Timber.tag("Help_getOneHelp").d(response.toString())
+                    Timber.tag("Help_postHelpDo").d(response.toString())
+                    _isSuccessPostHelp.postValue(Event(true))
                 }
                 .onFailure {
-                    Timber.tag("Help_getOneHelp").d(it.message.toString())
+                    Timber.tag("Help_postHelpDo").d(it.message.toString())
                 }
         }
     }

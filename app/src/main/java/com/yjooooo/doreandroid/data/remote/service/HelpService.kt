@@ -30,7 +30,6 @@ interface HelpService {
         @Path("helpId") helpId: Int
     ): BaseResponse<OneHelp>
 
-    @Multipart
     @POST("help/{helpId}")
     suspend fun postHelpDo(
         @Path("helpId") helpId: Int

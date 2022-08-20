@@ -7,6 +7,7 @@ import com.yjooooo.doreandroid.R
 import com.yjooooo.doreandroid.databinding.ActivityHelpBinding
 import com.yjooooo.doreandroid.presentation.base.BaseActivity
 import com.yjooooo.doreandroid.presentation.help_request.HelpRequestActivity
+import com.yjooooo.doreandroid.util.EventObserver
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -25,6 +26,7 @@ class HelpActivity : BaseActivity<ActivityHelpBinding>(R.layout.activity_help) {
         initHelpRvAdapter()
         initHelpListObserver()
         initOneHelpObserver()
+        initIsSuccessPostHelpObserver()
     }
 
     private fun initBackBtnClickListener() {
@@ -61,5 +63,13 @@ class HelpActivity : BaseActivity<ActivityHelpBinding>(R.layout.activity_help) {
                 moveHelpDoDialog(helpViewModel.oneHelpId)
             }
         }
+    }
+
+    private fun initIsSuccessPostHelpObserver() {
+        helpViewModel.isSuccessPostHelp.observe(this, EventObserver { isSuccess ->
+            if (isSuccess) {
+                helpViewModel.getHelps()
+            }
+        })
     }
 }
