@@ -8,14 +8,27 @@ import androidx.recyclerview.widget.RecyclerView
 import com.yjooooo.doreandroid.data.remote.entity.response.MessageRoom
 import com.yjooooo.doreandroid.databinding.ItemMessageRoomBinding
 
-class MessageRoomAdapter :
+class MessageRoomAdapter(
+    private val moveMessageRoom: (Int) -> Unit
+) :
     ListAdapter<MessageRoom, MessageRoomAdapter.MessageRoomViewHolder>(messageRoomDiffUtil) {
     class MessageRoomViewHolder(
-        private val binding: ItemMessageRoomBinding
+        private val binding: ItemMessageRoomBinding,
+        private val moveMessageRoom: (Int) -> Unit
     ) : RecyclerView.ViewHolder(binding.root) {
+        init {
+            initClickListener()
+        }
+
         fun bind(messageRoom: MessageRoom) {
             binding.messageRoom = messageRoom
             binding.executePendingBindings()
+        }
+
+        private fun initClickListener() {
+            binding.layoutMessageRoom.setOnClickListener {
+                moveMessageRoom(requireNotNull(binding.messageRoom).chatId)
+            }
         }
     }
 
@@ -25,7 +38,8 @@ class MessageRoomAdapter :
                 LayoutInflater.from(parent.context),
                 parent,
                 false
-            )
+            ),
+            moveMessageRoom
         )
 
     override fun onBindViewHolder(holder: MessageRoomViewHolder, position: Int) {
