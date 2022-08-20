@@ -38,10 +38,10 @@ class HelpViewModel @Inject constructor(
         viewModelScope.launch {
             helpRepository.postHelpDo(helpId)
                 .onSuccess { response ->
-                    Timber.tag("Help_postHelpSubscribe").d((response.toString()))
+                    Timber.tag("Help_postHelpDo").d((response.toString()))
                 }
                 .onFailure {
-                    Timber.tag("Help_postHelpSubscribe").d(it.message.toString())
+                    Timber.tag("Help_postHelpDo").d(it.message.toString())
                 }
         }
     }

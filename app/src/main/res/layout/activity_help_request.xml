@@ -66,14 +66,15 @@
             android:gravity="top"
             android:hint="@string/help_request_text_hint"
             android:inputType="textMultiLine"
+            android:maxLength="30"
+            android:text="@={helpRequestViewModel.content}"
             android:textColor="@color/dore_text_black"
             android:textColorHint="@color/dore_gray_5"
             android:textSize="14dp"
             app:layout_constraintBottom_toTopOf="@id/tv_help_request_text_count"
             app:layout_constraintEnd_toEndOf="@id/view_help_request"
             app:layout_constraintStart_toStartOf="@id/view_help_request"
-            app:layout_constraintTop_toTopOf="@id/view_help_request"
-            tools:text="옥상 화단에 물을 안 줬는데 12시에 갈 수 있ㄴ" />
+            app:layout_constraintTop_toTopOf="@id/view_help_request" />
 
         <TextView
             android:id="@+id/tv_help_request_text_count"
@@ -81,7 +82,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            android:text="26/30"
+            android:text="@{@string/help_request_sum(helpRequestViewModel.content.length)}"
             app:layout_constraintBottom_toBottomOf="@id/view_help_request"
             app:layout_constraintEnd_toEndOf="@id/view_help_request" />
 
@@ -133,6 +134,7 @@
             android:background="@color/dore_blue"
             android:fontFamily="@font/spoqa_han_sans_neo_medium"
             android:minHeight="0dp"
+            android:onClick="@{()->helpRequestViewModel.postHelpRequest()}"
             android:paddingVertical="12dp"
             android:stateListAnimator="@null"
             android:text="@string/help_request_done"

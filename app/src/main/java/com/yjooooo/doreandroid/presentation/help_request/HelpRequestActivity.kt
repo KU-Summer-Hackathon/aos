@@ -17,6 +17,7 @@ import com.yjooooo.doreandroid.util.EventObserver
 import com.yjooooo.doreandroid.util.MultiPartResolver
 import com.yjooooo.doreandroid.util.getImgUri
 import com.yjooooo.doreandroid.util.getPathFromUri
+import com.yjooooo.doreandroid.util.showToast
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 import java.io.File
@@ -52,6 +53,7 @@ class HelpRequestActivity :
         binding.helpRequestViewModel = helpRequestViewModel
         initCloseBtnClickListener()
         initIsCancelRequestObserver()
+        initIsSuccessRequestObserver()
         initAddImgClickListener()
     }
 
@@ -64,6 +66,15 @@ class HelpRequestActivity :
     private fun initIsCancelRequestObserver() {
         helpRequestViewModel.isCancelRequest.observe(this, EventObserver { isCancel ->
             if (isCancel) {
+                finish()
+            }
+        })
+    }
+
+    private fun initIsSuccessRequestObserver() {
+        helpRequestViewModel.isSuccessRequest.observe(this, EventObserver { isSuccess ->
+            if (isSuccess) {
+                showToast(getString(R.string.help_request_success))
                 finish()
             }
         })
