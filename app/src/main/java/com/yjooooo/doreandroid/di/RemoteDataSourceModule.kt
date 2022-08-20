@@ -4,8 +4,11 @@ import com.yjooooo.doreandroid.data.remote.datasource.AuthDataSource
 import com.yjooooo.doreandroid.data.remote.datasource.AuthDataSourceImpl
 import com.yjooooo.doreandroid.data.remote.datasource.HelpDataSource
 import com.yjooooo.doreandroid.data.remote.datasource.HelpDataSourceImpl
+import com.yjooooo.doreandroid.data.remote.datasource.MessageDataSource
+import com.yjooooo.doreandroid.data.remote.datasource.MessageDataSourceImpl
 import com.yjooooo.doreandroid.data.remote.service.AuthService
 import com.yjooooo.doreandroid.data.remote.service.HelpService
+import com.yjooooo.doreandroid.data.remote.service.MessageService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -22,4 +25,8 @@ object RemoteDataSourceModule {
     @Provides
     @Singleton
     fun providesHelpDataSource(helpService: HelpService): HelpDataSource = HelpDataSourceImpl(helpService)
+
+    @Provides
+    @Singleton
+    fun providesMessageDatasource(messageService: MessageService): MessageDataSource = MessageDataSourceImpl(messageService)
 }

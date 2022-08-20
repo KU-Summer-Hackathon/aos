@@ -2,10 +2,13 @@ package com.yjooooo.doreandroid.di
 
 import com.yjooooo.doreandroid.data.remote.datasource.AuthDataSource
 import com.yjooooo.doreandroid.data.remote.datasource.HelpDataSource
+import com.yjooooo.doreandroid.data.remote.datasource.MessageDataSource
 import com.yjooooo.doreandroid.data.remote.repository.AuthRepository
 import com.yjooooo.doreandroid.data.remote.repository.AuthRepositoryImpl
 import com.yjooooo.doreandroid.data.remote.repository.HelpRepository
 import com.yjooooo.doreandroid.data.remote.repository.HelpRepositoryImpl
+import com.yjooooo.doreandroid.data.remote.repository.MessageRepository
+import com.yjooooo.doreandroid.data.remote.repository.MessageRepositoryImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -28,5 +31,12 @@ object RepositoryModule {
         helpDataSource: HelpDataSource
     ): HelpRepository =
         HelpRepositoryImpl(helpDataSource)
+
+    @Provides
+    @Singleton
+    fun providesMessageRepository(
+        messageDataSource: MessageDataSource
+    ): MessageRepository =
+        MessageRepositoryImpl(messageDataSource)
 
 }
