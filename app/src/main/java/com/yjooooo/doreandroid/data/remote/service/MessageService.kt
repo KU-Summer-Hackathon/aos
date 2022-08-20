@@ -21,4 +21,9 @@ interface MessageService {
     suspend fun postAcceptHelp(
         @Path("messageId") messageId: Int
     ): NoDataResponse
+
+    @POST("message/{messageId}/help/complete")
+    suspend fun postCompleteHelp(
+        @Path("messageId") messageId: Int
+    ): NoDataResponse
 }

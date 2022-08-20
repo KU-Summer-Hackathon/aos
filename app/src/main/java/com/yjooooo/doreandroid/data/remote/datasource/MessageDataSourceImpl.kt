@@ -18,4 +18,7 @@ class MessageDataSourceImpl @Inject constructor(
 
     override suspend fun postAcceptHelp(messageId: Int): NoDataResponse =
         messageService.postAcceptHelp(messageId)
+
+    override suspend fun postCompleteHelp(messageId: Int): NoDataResponse =
+        messageService.postCompleteHelp(messageId)
 }

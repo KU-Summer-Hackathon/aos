@@ -19,4 +19,5 @@
     <color name="dore_gray_5">#AFAFAF</color>
     <color name="dore_gray_6">#969696</color>
     <color name="dore_gray_7">#3D3D3D</color>
+    <color name="dore_black_opacity_80">#cc161616</color>
 </resources>

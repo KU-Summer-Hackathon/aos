@@ -6,21 +6,30 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.yjooooo.doreandroid.R
 import com.yjooooo.doreandroid.databinding.ActivityMessageRoomBinding
 import com.yjooooo.doreandroid.presentation.base.BaseActivity
+import com.yjooooo.doreandroid.util.EventObserver
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MessageRoomActivity :
     BaseActivity<ActivityMessageRoomBinding>(R.layout.activity_message_room) {
     private val messageRoomViewModel by viewModels<MessageRoomViewModel>()
-    private val messageAdapter = MessageAdapter()
+    private val messageAdapter = MessageAdapter(
+        { messageId -> messageRoomViewModel.postAcceptHelp(messageId) },
+        { messageId -> messageRoomViewModel.postCompleteHelp(messageId) }
+    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding.messageRoomViewModel = messageRoomViewModel
         binding.userName = intent.getStringExtra("messageRoomUserName")
-        messageRoomViewModel.getMessages(intent.getIntExtra("messageRoomId", -1))
+        intent.getIntExtra("messageRoomId", -1).let {
+            messageRoomViewModel.getMessages(it)
+            messageRoomViewModel.initMessageId(it)
+        }
         initMessageRoomRvAdapter()
         initBackBtnClickListener()
         initMessagesObserver()
+        initIsSuccessPostObserver()
     }
 
     private fun initMessageRoomRvAdapter() {
@@ -39,5 +48,13 @@ class MessageRoomActivity :
         messageRoomViewModel.messages.observe(this) { messages ->
             messageAdapter.submitList(messages)
         }
+    }
+
+    private fun initIsSuccessPostObserver() {
+        messageRoomViewModel.isSuccessPost.observe(this, EventObserver { isSuccess ->
+            if (isSuccess) {
+                messageRoomViewModel.getMessages(messageRoomViewModel.messageId)
+            }
+        })
     }
 }

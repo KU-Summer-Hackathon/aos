@@ -20,14 +20,20 @@ import com.yjooooo.doreandroid.databinding.ItemMessageHelpBinding
 import com.yjooooo.doreandroid.databinding.ItemMessageMissionBinding
 import java.lang.IllegalStateException
 
-class MessageAdapter :
+class MessageAdapter(
+    private val postAcceptHelp: (Int) -> Unit,
+    private val postCompleteHelp: (Int) -> Unit,
+) :
     ListAdapter<Message, RecyclerView.ViewHolder>(messageDiffUtil) {
-    class MessageHelpViewHolder(private val binding: ItemMessageHelpBinding) :
-        RecyclerView.ViewHolder(binding.root) {
+    class MessageHelpViewHolder(
+        private val binding: ItemMessageHelpBinding,
+        private val postAcceptHelp: (Int) -> Unit
+    ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(message: Message) {
             binding.msgHelp = message
             binding.executePendingBindings()
             initResultMsg(message.type)
+            initYesBtnClickListener(message.messageId)
         }
 
         private fun initResultMsg(type: Int) {
@@ -38,13 +44,24 @@ class MessageAdapter :
                 else -> ""
             }
         }
+
+        private fun initYesBtnClickListener(messageId: Int) {
+            binding.btnMessageHelpYes.setOnClickListener { postAcceptHelp(messageId) }
+        }
     }
 
-    class MessageCheckHelpViewHolder(private val binding: ItemMessageCheckHelpBinding) :
-        RecyclerView.ViewHolder(binding.root) {
+    class MessageCheckHelpViewHolder(
+        private val binding: ItemMessageCheckHelpBinding,
+        private val postCompleteHelp: (Int) -> Unit
+    ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(message: Message) {
             binding.msgCheckHelp = message
             binding.executePendingBindings()
+            initYesBtnClickListener(message.messageId)
+        }
+
+        private fun initYesBtnClickListener(messageId: Int) {
+            binding.btnMessageCheckHelpYes.setOnClickListener { postCompleteHelp(messageId) }
         }
     }
 
@@ -56,8 +73,9 @@ class MessageAdapter :
         }
     }
 
-    class MessageCompleteHelpViewHolder(binding: ItemMessageCompleteHelpBinding) :
-        RecyclerView.ViewHolder(binding.root)
+    class MessageCompleteHelpViewHolder(
+        binding: ItemMessageCompleteHelpBinding
+    ) : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return when (viewType) {
@@ -67,14 +85,16 @@ class MessageAdapter :
                         LayoutInflater.from(parent.context),
                         parent,
                         false
-                    )
+                    ),
+                    postAcceptHelp
                 )
             CHECK_HELP -> MessageCheckHelpViewHolder(
                 ItemMessageCheckHelpBinding.inflate(
                     LayoutInflater.from(parent.context),
                     parent,
                     false
-                )
+                ),
+                postCompleteHelp
             )
             COMPLETE_HELP -> MessageCompleteHelpViewHolder(
                 ItemMessageCompleteHelpBinding.inflate(

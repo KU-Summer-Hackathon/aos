@@ -2,6 +2,7 @@ package com.yjooooo.doreandroid.util
 
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
+import com.airbnb.lottie.LottieAnimationView
 import com.bumptech.glide.Glide
 import com.yjooooo.doreandroid.R
 
@@ -35,6 +36,16 @@ object BindingAdapters {
                 .placeholder(R.color.dore_bg_black)
                 .error(R.color.dore_bg_black)
                 .into(imageview)
+        }
+    }
+
+    @JvmStatic
+    @BindingAdapter("playLoadingLottie")
+    fun playLoadingLottie(lottie: LottieAnimationView, play: Boolean) {
+        if (play) {
+            lottie.playAnimation()
+        } else {
+            lottie.cancelAnimation()
         }
     }
 }

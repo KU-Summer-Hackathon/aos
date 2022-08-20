@@ -18,4 +18,7 @@ class MessageRepositoryImpl @Inject constructor(
 
     override suspend fun postAcceptHelp(messageId: Int): Result<NoDataResponse> =
         kotlin.runCatching { messageDataSource.postAcceptHelp(messageId) }
+
+    override suspend fun postCompleteHelp(messageId: Int): Result<NoDataResponse> =
+        kotlin.runCatching { messageDataSource.postCompleteHelp(messageId) }
 }

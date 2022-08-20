@@ -11,4 +11,6 @@ interface MessageDataSource {
     suspend fun getMessages(chatId: Int): BaseResponse<List<Message>>
 
     suspend fun postAcceptHelp(messageId: Int): NoDataResponse
+
+    suspend fun postCompleteHelp(messageId: Int): NoDataResponse
 }
