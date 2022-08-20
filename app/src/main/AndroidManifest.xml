@@ -14,6 +14,9 @@
         android:theme="@style/Theme.DoReAndroid"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".presentation.help_request.HelpRequestActivity"
+            android:exported="false" />
+        <activity
             android:name=".presentation.message.MessageActivity"
             android:exported="false" />
         <activity

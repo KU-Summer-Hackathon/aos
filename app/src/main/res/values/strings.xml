@@ -9,6 +9,7 @@
     <string name="title_eat">Eat</string>
     <string name="title_lend">Lend</string>
     <string name="title_message">Messages</string>
+    <string name="title_help_request">도움요청</string>
 
     <!-- SignInFragment -->
     <string name="sign_in_desc_kakao_login">카카오 로그인 버튼</string>

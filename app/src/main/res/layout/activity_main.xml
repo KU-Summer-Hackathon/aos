@@ -29,7 +29,7 @@
             android:id="@+id/bottom_navi_main"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="@color/dore_black"
+            android:background="@color/dore_bg_black"
             app:itemIconTint="@drawable/selector_bottom_navi"
             app:itemTextAppearanceActive="@style/BottomNavigationViewTextStyle"
             app:itemTextAppearanceInactive="@style/BottomNavigationViewTextStyle"

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/dore_bg_black"
+        tools:context=".presentation.help_request.HelpRequestActivity">
+
+        <TextView
+            android:id="@+id/tv_help_request_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="36dp"
+            android:fontFamily="@font/spoqa_han_sans_neo_bold"
+            android:text="@string/title_help_request"
+            android:textColor="@color/dore_white"
+            android:textSize="18dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/btn_help_request_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:layout_marginEnd="6dp"
+            android:background="@android:color/transparent"
+            android:padding="10dp"
+            android:src="@drawable/ic_close"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/view_help_request"
+            android:layout_width="0dp"
+            android:layout_height="98dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="36dp"
+            android:background="@color/dore_white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_help_request_title" />
+
+        <EditText
+            android:id="@+id/et_help_request"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="4dp"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/spoqa_han_sans_neo_medium"
+            android:gravity="top"
+            android:inputType="textMultiLine"
+            android:textColor="@color/dore_text_black"
+            android:textSize="14dp"
+            app:layout_constraintBottom_toTopOf="@id/tv_help_request_text_count"
+            app:layout_constraintEnd_toEndOf="@id/view_help_request"
+            app:layout_constraintStart_toStartOf="@id/view_help_request"
+            app:layout_constraintTop_toTopOf="@id/view_help_request"
+            tools:text="옥상 화단에 물을 안 줬는데 12시에 갈 수 있ㄴ" />
+
+        <TextView
+            android:id="@+id/tv_help_request_text_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="26/30"
+            app:layout_constraintBottom_toBottomOf="@id/view_help_request"
+            app:layout_constraintEnd_toEndOf="@id/view_help_request" />
+
+        <ImageView
+            android:id="@+id/iv_help_request_1"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:background="@color/dore_gray_7"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view_help_request" />
+
+        <ImageView
+            android:id="@+id/iv_help_request_2"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:background="@color/dore_gray_7"
+            app:layout_constraintStart_toEndOf="@id/iv_help_request_1"
+            app:layout_constraintTop_toBottomOf="@id/view_help_request"
+            app:layout_goneMarginStart="16dp" />
+
+        <ImageButton
+            android:id="@+id/btn_help_request_add_img"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:background="@color/dore_gray_3"
+            android:src="@drawable/ic_add"
+            app:layout_constraintStart_toEndOf="@id/iv_help_request_2"
+            app:layout_constraintTop_toBottomOf="@id/view_help_request"
+            app:layout_goneMarginStart="16dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="20dp"
+            android:background="@color/dore_blue"
+            android:fontFamily="@font/spoqa_han_sans_neo_medium"
+            android:minHeight="0dp"
+            android:paddingVertical="12dp"
+            android:text="작성 완료"
+            android:textColor="@color/dore_white"
+            android:textSize="14dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

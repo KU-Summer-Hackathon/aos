@@ -1,6 +1,5 @@
 package com.yjooooo.doreandroid.util
 
-import android.net.Uri
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
@@ -33,8 +32,8 @@ object BindingAdapters {
         url?.let {
             Glide.with(imageview.context)
                 .load(url)
-                .placeholder(R.color.dore_black)
-                .error(R.color.dore_black)
+                .placeholder(R.color.dore_bg_black)
+                .error(R.color.dore_bg_black)
                 .into(imageview)
         }
     }

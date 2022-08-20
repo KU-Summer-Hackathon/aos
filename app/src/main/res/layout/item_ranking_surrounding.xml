@@ -69,7 +69,7 @@
             android:layout_marginBottom="14dp"
             android:fontFamily="@font/spoqa_han_sans_neo_medium"
             android:text="@{surrounding.title}"
-            android:textColor="@color/dore_black"
+            android:textColor="@color/dore_bg_black"
             android:textSize="12dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@id/iv_surrounding_certificate"

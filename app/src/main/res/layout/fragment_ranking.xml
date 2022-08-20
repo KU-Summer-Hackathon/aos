@@ -15,7 +15,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:background="@color/dore_black">
+            tools:background="@color/dore_bg_black">
 
             <ImageView
                 android:id="@+id/iv_ranking_top"
@@ -71,7 +71,7 @@
                     android:layout_marginStart="16dp"
                     android:fontFamily="@font/montserrat_medium"
                     android:text="23"
-                    android:textColor="@color/black"
+                    android:textColor="@color/dore_text_black"
                     android:textSize="16dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

@@ -31,7 +31,7 @@
             android:layout_marginStart="12dp"
             android:fontFamily="@font/spoqa_han_sans_neo_bold"
             android:text="이영서"
-            android:textColor="@color/black"
+            android:textColor="@color/dore_text_black"
             android:textSize="18dp"
             app:layout_constraintBottom_toBottomOf="@id/iv_message_profile"
             app:layout_constraintStart_toEndOf="@id/iv_message_profile"

@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:background="@color/dore_black"
+        tools:background="@color/dore_bg_black"
         tools:context=".presentation.dore.DoReFragment">
 
         <TextView
@@ -68,7 +68,7 @@
             android:layout_marginTop="16dp"
             android:fontFamily="@font/montserrat_bold"
             android:text="@string/title_help"
-            android:textColor="@color/black"
+            android:textColor="@color/dore_text_black"
             android:textSize="20dp"
             app:layout_constraintStart_toStartOf="@id/btn_do_re_help"
             app:layout_constraintTop_toTopOf="@id/btn_do_re_help" />
@@ -107,7 +107,7 @@
             android:layout_marginTop="16dp"
             android:fontFamily="@font/montserrat_bold"
             android:text="@string/title_eat"
-            android:textColor="@color/black"
+            android:textColor="@color/dore_text_black"
             android:textSize="20dp"
             app:layout_constraintEnd_toEndOf="@id/btn_do_re_eat"
             app:layout_constraintStart_toStartOf="@id/btn_do_re_eat"
@@ -120,7 +120,7 @@
             android:layout_marginTop="16dp"
             android:fontFamily="@font/spoqa_han_sans_neo_medium"
             android:text="@string/do_re_eat_desc"
-            android:textColor="@color/black"
+            android:textColor="@color/dore_text_black"
             android:textSize="13dp"
             app:layout_constraintEnd_toEndOf="@id/btn_do_re_eat"
             app:layout_constraintStart_toStartOf="@id/btn_do_re_eat"
@@ -147,7 +147,7 @@
             android:layout_marginEnd="16dp"
             android:fontFamily="@font/montserrat_bold"
             android:text="@string/title_lend"
-            android:textColor="@color/black"
+            android:textColor="@color/dore_text_black"
             android:textSize="20dp"
             app:layout_constraintEnd_toEndOf="@id/btn_do_re_lend"
             app:layout_constraintTop_toTopOf="@id/btn_do_re_lend" />
