@@ -1,5 +1,6 @@
 package com.yjooooo.doreandroid.di
 
+import com.yjooooo.doreandroid.data.local.LocalPreferencesDataSource
 import com.yjooooo.doreandroid.data.remote.datasource.AuthDataSource
 import com.yjooooo.doreandroid.data.remote.datasource.HelpDataSource
 import com.yjooooo.doreandroid.data.remote.datasource.MessageDataSource
@@ -21,9 +22,10 @@ object RepositoryModule {
     @Provides
     @Singleton
     fun providesAuthRepository(
+        localPreferencesDataSource: LocalPreferencesDataSource,
         authDataSource: AuthDataSource
     ): AuthRepository =
-        AuthRepositoryImpl(authDataSource)
+        AuthRepositoryImpl(localPreferencesDataSource, authDataSource)
 
     @Provides
     @Singleton

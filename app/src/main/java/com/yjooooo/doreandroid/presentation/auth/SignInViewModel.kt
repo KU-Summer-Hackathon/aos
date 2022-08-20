@@ -66,10 +66,15 @@ class SignInViewModel @Inject constructor(
                 )
             ).onSuccess { response ->
                 Timber.tag("SignIn_postSignIn").d(response.data.token.accessToken)
+                authRepository.saveAccessToken(BEARER + response.data.token.accessToken)
                 _isSuccessSignIn.postValue(Event(true))
             }.onFailure {
                 Timber.tag("SignIn_postSignIn").d(it.message.toString())
             }
         }
+    }
+
+    companion object {
+        const val BEARER = "Bearer "
     }
 }
