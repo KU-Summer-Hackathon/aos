@@ -8,6 +8,7 @@
     <string name="title_help">Help</string>
     <string name="title_eat">Eat</string>
     <string name="title_lend">Lend</string>
+    <string name="title_message">Messages</string>
 
     <!-- SignInFragment -->
     <string name="sign_in_desc_kakao_login">카카오 로그인 버튼</string>

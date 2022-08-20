@@ -34,6 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="6dp"
             android:fontFamily="@font/montserrat_semibold"
+            android:includeFontPadding="false"
             android:text="@string/title_help"
             android:textColor="@color/white"
             android:textSize="22dp"
