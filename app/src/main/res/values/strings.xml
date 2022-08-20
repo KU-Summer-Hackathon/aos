@@ -6,12 +6,9 @@
     <string name="title_ranking">Ranking</string>
     <string name="title_do_re">Do-re</string>
     <string name="title_my">My</string>
-    <string name="title_help">Help</string>
-    <string name="title_eat">Eat</string>
-    <string name="title_lend">Lend</string>
-    <string name="title_dore_help">도와두레</string>
-    <string name="title_dore_eat">먹어두레</string>
-    <string name="title_dore_lend">빌려두레</string>
+    <string name="title_help">도와두레</string>
+    <string name="title_eat">먹어두레</string>
+    <string name="title_lend">빌려두레</string>
     <string name="title_message">Messages</string>
     <string name="title_help_request">도움 요청</string>
     <string name="title_help_do">도와주기</string>

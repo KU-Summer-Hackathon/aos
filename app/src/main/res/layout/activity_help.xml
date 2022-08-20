@@ -33,7 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="6dp"
-            android:fontFamily="@font/montserrat_semibold"
+            android:fontFamily="@font/spoqa_han_sans_neo_bold"
             android:includeFontPadding="false"
             android:text="@string/title_help"
             android:textColor="@color/white"
