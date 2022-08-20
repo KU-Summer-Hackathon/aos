@@ -63,6 +63,7 @@ class SignInActivity : BaseActivity<ActivitySignInBinding>(R.layout.activity_sig
             if (isSuccess) {
                 showToast(getString(R.string.sign_in_complete_login_msg))
                 startActivity(Intent(this, MainActivity::class.java))
+                finish()
             } else {
                 showToast(getString(R.string.sign_in_sign_in_failure_msg))
             }
