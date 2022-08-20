@@ -10,5 +10,10 @@ import dagger.hilt.android.AndroidEntryPoint
 class MessageActivity : BaseActivity<ActivityMessageBinding>(R.layout.activity_message) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        initBackBtnClickListener()
+    }
+
+    private fun initBackBtnClickListener() {
+        binding.btnMessageBack.setOnClickListener { finish() }
     }
 }

@@ -21,9 +21,7 @@ class HelpActivity : BaseActivity<ActivityHelpBinding>(R.layout.activity_help) {
     }
 
     private fun initBackBtnClickListener() {
-        binding.btnHelpBack.setOnClickListener {
-            finish()
-        }
+        binding.btnHelpBack.setOnClickListener { finish() }
     }
 
     private fun initHelpRvAdapter() {
