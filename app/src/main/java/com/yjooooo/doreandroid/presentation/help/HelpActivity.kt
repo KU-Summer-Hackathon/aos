@@ -7,13 +7,15 @@ import com.yjooooo.doreandroid.R
 import com.yjooooo.doreandroid.databinding.ActivityHelpBinding
 import com.yjooooo.doreandroid.presentation.base.BaseActivity
 import com.yjooooo.doreandroid.presentation.help_request.HelpRequestActivity
-import com.yjooooo.doreandroid.presentation.help_request.HelpRequestDialogFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class HelpActivity : BaseActivity<ActivityHelpBinding>(R.layout.activity_help) {
     private val helpViewModel by viewModels<HelpViewModel>()
-    private val helpAdapter = HelpAdapter { moveHelpDoDialog() }
+    private val helpAdapter = HelpAdapter(
+        { helpId -> helpViewModel.initOneHelpId(helpId) },
+        { helpId -> helpViewModel.getOneHelp(helpId) }
+    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,6 +24,7 @@ class HelpActivity : BaseActivity<ActivityHelpBinding>(R.layout.activity_help) {
         initHelpRequestBtnClickListener()
         initHelpRvAdapter()
         initHelpListObserver()
+        initOneHelpObserver()
     }
 
     private fun initBackBtnClickListener() {
@@ -34,10 +37,6 @@ class HelpActivity : BaseActivity<ActivityHelpBinding>(R.layout.activity_help) {
         }
     }
 
-    private fun moveHelpDoDialog() {
-        HelpDoDialogFragment().show(supportFragmentManager, this.javaClass.name)
-    }
-
     private fun initHelpRvAdapter() {
         binding.rvHelp.adapter = helpAdapter
     }
@@ -46,6 +45,21 @@ class HelpActivity : BaseActivity<ActivityHelpBinding>(R.layout.activity_help) {
         helpViewModel.helpList.observe(this) { helpList ->
             binding.address = helpViewModel.address.value
             helpAdapter.submitList(helpList)
+        }
+    }
+
+    private fun moveHelpDoDialog(helpId: Int) {
+        HelpDoDialogFragment().let {
+            it.arguments = Bundle().apply { putInt("helpId", helpId) }
+            it.show(supportFragmentManager, this.javaClass.name)
+        }
+    }
+
+    private fun initOneHelpObserver() {
+        helpViewModel.oneHelp.observe(this) { oneHelp ->
+            if (oneHelp != null) {
+                moveHelpDoDialog(helpViewModel.oneHelpId)
+            }
         }
     }
 }

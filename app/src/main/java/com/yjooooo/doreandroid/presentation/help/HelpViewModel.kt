@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.yjooooo.doreandroid.data.remote.entity.response.Help
+import com.yjooooo.doreandroid.data.remote.entity.response.OneHelp
 import com.yjooooo.doreandroid.data.remote.repository.HelpRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -21,6 +22,16 @@ class HelpViewModel @Inject constructor(
     private val _helpList = MutableLiveData<List<Help>>()
     val helpList: LiveData<List<Help>> = _helpList
 
+    var oneHelpId = -1
+        private set
+
+    private val _oneHelp = MutableLiveData<OneHelp>()
+    val oneHelp: LiveData<OneHelp> = _oneHelp
+
+    fun initOneHelpId(helpId: Int) {
+        oneHelpId = helpId
+    }
+
     fun getHelps() {
         viewModelScope.launch {
             helpRepository.getHelps()
@@ -34,17 +45,28 @@ class HelpViewModel @Inject constructor(
         }
     }
 
-    fun postHelpDo(helpId: Int) {
+    fun getOneHelp(helpId: Int) {
         viewModelScope.launch {
-            helpRepository.postHelpDo(helpId)
+            helpRepository.getOneHelp(helpId)
                 .onSuccess { response ->
-                    Timber.tag("Help_postHelpDo").d((response.toString()))
+                    Timber.tag("Help_getOneHelp").d(response.toString())
+                    _oneHelp.postValue(requireNotNull(response.data))
                 }
                 .onFailure {
-                    Timber.tag("Help_postHelpDo").d(it.message.toString())
+                    Timber.tag("Help_getOneHelp").d(it.message.toString())
                 }
         }
     }
 
-
+    fun postHelpDo(helpId: Int) {
+        viewModelScope.launch {
+            helpRepository.postHelpDo(helpId)
+                .onSuccess { response ->
+                    Timber.tag("Help_getOneHelp").d(response.toString())
+                }
+                .onFailure {
+                    Timber.tag("Help_getOneHelp").d(it.message.toString())
+                }
+        }
+    }
 }

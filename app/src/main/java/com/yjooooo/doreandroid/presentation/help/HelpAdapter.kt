@@ -1,7 +1,6 @@
 package com.yjooooo.doreandroid.presentation.help
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -10,11 +9,13 @@ import com.yjooooo.doreandroid.data.remote.entity.response.Help
 import com.yjooooo.doreandroid.databinding.ItemHelpBinding
 
 class HelpAdapter(
-    private val moveHelpDoDialog: () -> Unit,
+    private val initOneHelpId: (Int) -> Unit,
+    private val getOneHelp: (Int) -> Unit
 ) : ListAdapter<Help, HelpAdapter.HelpViewHolder>(helpDiffUtil) {
     class HelpViewHolder(
         private val binding: ItemHelpBinding,
-        private val moveHelpDoDialog: () -> Unit,
+        private val initOneHelpId: (Int) -> Unit,
+        private val getOneHelp: (Int) -> Unit
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(help: Help) {
             binding.help = help
@@ -25,7 +26,8 @@ class HelpAdapter(
         private fun initHelpDoBtnClickListener(helpId: Int) {
             if (!requireNotNull(binding.help).requested) {
                 binding.btnHelpDo.setOnClickListener {
-                    moveHelpDoDialog
+                    getOneHelp(helpId)
+                    initOneHelpId(helpId)
                 }
             }
         }
@@ -38,7 +40,8 @@ class HelpAdapter(
                 parent,
                 false
             ),
-            moveHelpDoDialog
+            initOneHelpId,
+            getOneHelp
         )
 
     override fun onBindViewHolder(holder: HelpViewHolder, position: Int) {
