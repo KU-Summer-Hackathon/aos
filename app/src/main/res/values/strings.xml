@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DoReAndroid</string>
+    <string name="app_name">Do-re</string>
     <string name="binding_error">Binding not initialized to reference the view.</string>
 
     <!-- BottomNavigation -->

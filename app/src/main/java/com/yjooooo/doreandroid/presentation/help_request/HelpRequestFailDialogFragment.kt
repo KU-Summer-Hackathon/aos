@@ -49,7 +49,7 @@ class HelpRequestFailDialogFragment : DialogFragment() {
                     (resources.displayMetrics.widthPixels * 0.91).toInt(),
                     ViewGroup.LayoutParams.WRAP_CONTENT
                 )
-                setBackgroundDrawableResource(R.drawable.shape_rect_white)
+                setBackgroundDrawableResource(R.drawable.shape_rect_gray7)
             }
         }
     }

@@ -31,11 +31,22 @@
             android:layout_marginTop="26dp"
             android:fontFamily="@font/spoqa_han_sans_neo_bold"
             android:text="@string/help_request_fail_title"
-            android:textColor="@color/dore_text_black"
+            android:textColor="@color/dore_white"
             android:textSize="18dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_help_request_fail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_help_request_fail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_help_request_fail_title" />
 
         <TextView
             android:id="@+id/tv_help_request_fail_content"
@@ -45,18 +56,18 @@
             android:fontFamily="@font/spoqa_han_sans_neo_medium"
             android:gravity="center"
             android:text="@string/help_request_fail_content"
-            android:textColor="@color/dore_gray_6"
+            android:textColor="@color/dore_gray_4"
             android:textSize="14dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_help_request_fail_title" />
+            app:layout_constraintTop_toBottomOf="@id/iv_help_request_fail" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_help_request_fail_buy"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="26dp"
             android:layout_marginBottom="16dp"
             android:background="@color/dore_blue"
             android:fontFamily="@font/spoqa_han_sans_neo_medium"
