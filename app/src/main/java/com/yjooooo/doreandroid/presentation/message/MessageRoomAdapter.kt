@@ -9,12 +9,12 @@ import com.yjooooo.doreandroid.data.remote.entity.response.MessageRoom
 import com.yjooooo.doreandroid.databinding.ItemMessageRoomBinding
 
 class MessageRoomAdapter(
-    private val moveMessageRoom: (Int) -> Unit
+    private val moveMessageRoom: (MessageRoom) -> Unit
 ) :
     ListAdapter<MessageRoom, MessageRoomAdapter.MessageRoomViewHolder>(messageRoomDiffUtil) {
     class MessageRoomViewHolder(
         private val binding: ItemMessageRoomBinding,
-        private val moveMessageRoom: (Int) -> Unit
+        private val moveMessageRoom: (MessageRoom) -> Unit
     ) : RecyclerView.ViewHolder(binding.root) {
         init {
             initClickListener()
@@ -27,7 +27,7 @@ class MessageRoomAdapter(
 
         private fun initClickListener() {
             binding.layoutMessageRoom.setOnClickListener {
-                moveMessageRoom(requireNotNull(binding.messageRoom).chatId)
+                moveMessageRoom(requireNotNull(binding.messageRoom))
             }
         }
     }
