@@ -9,7 +9,7 @@
     <string name="title_eat">Eat</string>
     <string name="title_lend">Lend</string>
     <string name="title_message">Messages</string>
-    <string name="title_help_request">도움요청</string>
+    <string name="title_help_request">도움 요청</string>
 
     <!-- SignInFragment -->
     <string name="sign_in_desc_kakao_login">카카오 로그인 버튼</string>
@@ -25,6 +25,11 @@
     <string name="do_re_eat_desc">함께 식사할 이웃을 찾아보아요!</string>
     <string name="do_re_help_desc">해결할 문제가 있으세요?\n이웃들의 도움을 받아보아요!</string>
     <string name="do_re_lend_desc">필요한 물건이 있으세요?\n이웃들에게 빌려보아요!</string>
+
+    <!-- HelpActivity -->
     <string name="help_do_help">돕기</string>
     <string name="help_request_help">도움 요청</string>
+
+    <!-- HelpRequestActivity -->
+    <string name="help_request_text_hint">내용을 입력해주세요.</string>
 </resources>
