@@ -9,7 +9,7 @@ import com.yjooooo.doreandroid.R
 object BindingAdapters {
     @JvmStatic
     @BindingAdapter("profileImgUri")
-    fun setProfileImg(imageview: ImageView, imgUri: Uri?) {
+    fun setProfileImg(imageview: ImageView, imgUri: String?) {
         if (imgUri == null) {
             Glide.with(imageview.context)
                 .load(R.drawable.shape_circle_black)

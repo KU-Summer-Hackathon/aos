@@ -46,8 +46,7 @@ class RankingSurroundingAdapter :
         )
 
     override fun onBindViewHolder(
-        holder: SurroundingViewHolder,
-        position: Int
+        holder: SurroundingViewHolder, position: Int
     ) {
         holder.bind(getItem(position))
     }

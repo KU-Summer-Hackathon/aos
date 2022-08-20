@@ -1,6 +1,7 @@
 package com.yjooooo.doreandroid.di
 
 import com.yjooooo.doreandroid.data.remote.service.AuthService
+import com.yjooooo.doreandroid.data.remote.service.HelpService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -15,4 +16,9 @@ object RetrofitServiceModule {
     @Singleton
     fun providesAuthService(retrofit: Retrofit): AuthService =
         retrofit.create(AuthService::class.java)
+
+    @Provides
+    @Singleton
+    fun providesHelpService(retrofit: Retrofit): HelpService =
+        retrofit.create(HelpService::class.java)
 }

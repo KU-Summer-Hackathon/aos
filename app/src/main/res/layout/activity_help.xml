@@ -5,6 +5,9 @@
 
     <data>
 
+        <variable
+            name="address"
+            type="String" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -44,7 +47,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:fontFamily="@font/spoqa_han_sans_neo_medium"
-            android:text="영등포구 문래동"
+            android:text="@{address}"
             android:textColor="@color/dore_blue"
             android:textSize="12dp"
             app:layout_constraintBottom_toBottomOf="@id/tv_help_title"
