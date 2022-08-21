@@ -3,7 +3,7 @@
 
 <br/>
 
-# 🏘 About Do-re 🧐
+# 🏘 About Do-re 🧐
 
 ### **_이웃과의 소통을 Re-do, Do-re 💡_**
 
