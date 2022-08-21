@@ -41,7 +41,8 @@
             android:exported="false" />
         <activity
             android:name=".presentation.help_request.HelpRequestActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".presentation.message.MessageActivity"
             android:exported="false" />
