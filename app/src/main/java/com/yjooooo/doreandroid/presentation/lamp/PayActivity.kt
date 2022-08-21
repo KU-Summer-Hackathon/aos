@@ -1,10 +1,6 @@
 package com.yjooooo.doreandroid.presentation.lamp
 
-import android.content.ActivityNotFoundException
-import android.content.Intent
 import android.os.Bundle
-import android.webkit.WebResourceRequest
-import android.webkit.WebView
 import android.webkit.WebViewClient
 import com.yjooooo.doreandroid.R
 import com.yjooooo.doreandroid.databinding.ActivityPayBinding

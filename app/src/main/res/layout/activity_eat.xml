@@ -12,6 +12,7 @@
         android:layout_height="match_parent"
         android:background="@drawable/ic_bg_pattern"
         tools:context=".presentation.eat.EatActivity">
+
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -31,6 +32,26 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/dore_black_opacity_80"
+            tools:visibility="gone">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lottie_message_room_loading"
+                android:layout_width="88dp"
+                android:layout_height="88dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:lottie_autoPlay="true"
+                app:lottie_fileName="loading.json"
+                app:lottie_loop="true" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_help_request"
             android:layout_width="wrap_content"
@@ -47,9 +68,11 @@
             android:text="@string/eat_together"
             android:textColor="@color/dore_white"
             android:textSize="18dp"
+            android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
