@@ -37,7 +37,7 @@ class DoReMessagingService : FirebaseMessagingService() {
             NotificationCompat.Builder(this, getString(R.string.app_name))
                 .setContentTitle(remoteMessage.data["title"].toString())
                 .setContentText(remoteMessage.data["body"].toString())
-                .setSmallIcon(R.drawable.ic_launcher_foreground)
+                .setSmallIcon(R.drawable.ic_app_logo_foreground)
                 .setContentIntent(pendingIntent)
                 .setPriority(NotificationCompat.PRIORITY_MAX)
                 .setAutoCancel(true)
