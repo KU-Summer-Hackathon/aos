@@ -78,4 +78,7 @@
     <string name="profile_lamp_count">보유 램프</string>
     <string name="profile_dore_count">내가 참여한 두레</string>
     <string name="profile_badge">획득한 뱃지</string>
+
+    <!-- EatActivity -->
+    <string name="eat_together">같이 먹자</string>
 </resources>
